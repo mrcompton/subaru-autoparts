@@ -1,3 +1,10 @@
+create table if not exists cars (
+id serial primary key,
+year integer,
+model text,
+trim text
+);
+
 insert into cars (year,model,trim)
 values(2016,'WRX', 'Limited');
 
@@ -93,3 +100,9 @@ values(2017,'Legacy', '3.6R Limited');
 
 insert into cars (year,model,trim)
 values(2018,'Legacy', '3.6R Limited');
+
+insert into cars (year,model,trim)
+values(2016,'Legacy', '2.5i');
+
+
+

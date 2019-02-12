@@ -3,6 +3,7 @@ id serial primary key,
 car_id integer references cars(id),
 part_id integer references parts(id)
 );
+
 --WRX Oil Filter
 insert into subaru_key (car_id,part_id)
 values(1,1);
@@ -71,6 +72,8 @@ insert into subaru_key (car_id,part_id)
 values(31,2);
 insert into subaru_key (car_id,part_id)
 values(32,2);
+insert into subaru_key (car_id,part_id)
+values(33,2);
 
 --Outback/Legacy 2.5L spark plug
 
@@ -108,6 +111,10 @@ insert into subaru_key (car_id,part_id)
 values(28,3);
 insert into subaru_key (car_id,part_id)
 values(29,3);
+insert into subaru_key (car_id,part_id)
+values(33,3);
+
+
 
 --Outback/Legacy 3.6L spark plug
 
@@ -193,6 +200,8 @@ insert into subaru_key (car_id,part_id)
 values(31,6);
 insert into subaru_key (car_id,part_id)
 values(32,6);
+insert into subaru_key (car_id,part_id)
+values(33,6);
 
 --WRX Cabin Air Filter
 
@@ -263,6 +272,8 @@ insert into subaru_key (car_id,part_id)
 values(31,8);
 insert into subaru_key (car_id,part_id)
 values(32,8);
+insert into subaru_key (car_id,part_id)
+values(33,8);
 
 --WRX Cabin Air Filter
 
@@ -321,6 +332,8 @@ insert into subaru_key (car_id,part_id)
 values(28,10);
 insert into subaru_key (car_id,part_id)
 values(29,10);
+insert into subaru_key (car_id,part_id)
+values(33,10);
 
 --Outback/Legacy 3.6L Serpentine belt
 
@@ -394,6 +407,8 @@ insert into subaru_key (car_id,part_id)
 values(28,16);
 insert into subaru_key (car_id,part_id)
 values(29,16);
+insert into subaru_key (car_id,part_id)
+values(33,16);
 
 --Outback/Legacy 3.6L Starter
 
@@ -467,6 +482,8 @@ insert into subaru_key (car_id,part_id)
 values(28,19);
 insert into subaru_key (car_id,part_id)
 values(29,19);
+insert into subaru_key (car_id,part_id)
+values(33,19);
 
 --Outback/Legacy 3.6L Alternator
 
@@ -504,4 +521,512 @@ values(8,21);
 insert into subaru_key (car_id,part_id)
 values(9,21);
 
+--WRX, 2016-17 2.5L Outback/Legacy Timing chain
 
+insert into subaru_key (car_id,part_id)
+values(10,13);
+insert into subaru_key (car_id,part_id)
+values(11,13);
+insert into subaru_key (car_id,part_id)
+values(13,13);
+insert into subaru_key (car_id,part_id)
+values(14,13);
+insert into subaru_key (car_id,part_id)
+values(16,13);
+insert into subaru_key (car_id,part_id)
+values(17,13);
+insert into subaru_key (car_id,part_id)
+values(22,13);
+insert into subaru_key (car_id,part_id)
+values(24,13);
+insert into subaru_key (car_id,part_id)
+values(25,13);
+insert into subaru_key (car_id,part_id)
+values(27,13);
+insert into subaru_key (car_id,part_id)
+values(28,13);
+insert into subaru_key (car_id,part_id)
+values(33,13);
+insert into subaru_key (car_id,part_id)
+values(1,13);
+insert into subaru_key (car_id,part_id)
+values(2,13);
+insert into subaru_key (car_id,part_id)
+values(3,13);
+insert into subaru_key (car_id,part_id)
+values(4,13);
+insert into subaru_key (car_id,part_id)
+values(5,13);
+insert into subaru_key (car_id,part_id)
+values(6,13);
+insert into subaru_key (car_id,part_id)
+values(7,13);
+insert into subaru_key (car_id,part_id)
+values(8,13);
+insert into subaru_key (car_id,part_id)
+values(9,13);
+
+--2018 2.5L Outback/Legacy Timing chain
+
+insert into subaru_key (car_id,part_id)
+values(12,14);
+insert into subaru_key (car_id,part_id)
+values(15,14);
+insert into subaru_key (car_id,part_id)
+values(18,14);
+insert into subaru_key (car_id,part_id)
+values(23,14);
+insert into subaru_key (car_id,part_id)
+values(26,14);
+insert into subaru_key (car_id,part_id)
+values(29,14);
+
+--3.6L Outback/Legacy Timing Chain
+
+insert into subaru_key (car_id,part_id)
+values(19,20);
+insert into subaru_key (car_id,part_id)
+values(20,20);
+insert into subaru_key (car_id,part_id)
+values(21,20);
+insert into subaru_key (car_id,part_id)
+values(30,20);
+insert into subaru_key (car_id,part_id)
+values(31,20);
+insert into subaru_key (car_id,part_id)
+values(32,20);
+
+--Outback/Legacy Front Wiper Blade - Passenger
+
+insert into subaru_key (car_id,part_id)
+values(10,22);
+insert into subaru_key (car_id,part_id)
+values(11,22);
+insert into subaru_key (car_id,part_id)
+values(12,22);
+insert into subaru_key (car_id,part_id)
+values(13,22);
+insert into subaru_key (car_id,part_id)
+values(14,22);
+insert into subaru_key (car_id,part_id)
+values(15,22);
+insert into subaru_key (car_id,part_id)
+values(16,22);
+insert into subaru_key (car_id,part_id)
+values(17,22);
+insert into subaru_key (car_id,part_id)
+values(18,22);
+insert into subaru_key (car_id,part_id)
+values(19,22);
+insert into subaru_key (car_id,part_id)
+values(20,22);
+insert into subaru_key (car_id,part_id)
+values(21,22);
+insert into subaru_key (car_id,part_id)
+values(22,22);
+insert into subaru_key (car_id,part_id)
+values(23,22);
+insert into subaru_key (car_id,part_id)
+values(24,22);
+insert into subaru_key (car_id,part_id)
+values(25,22);
+insert into subaru_key (car_id,part_id)
+values(26,22);
+insert into subaru_key (car_id,part_id)
+values(27,22);
+insert into subaru_key (car_id,part_id)
+values(28,22);
+insert into subaru_key (car_id,part_id)
+values(29,22);
+insert into subaru_key (car_id,part_id)
+values(30,22);
+insert into subaru_key (car_id,part_id)
+values(31,22);
+insert into subaru_key (car_id,part_id)
+values(32,22);
+insert into subaru_key (car_id,part_id)
+values(33,22);
+
+--Outback/Legacy Front Wiper Blade - Passenger
+
+insert into subaru_key (car_id,part_id)
+values(10,23);
+insert into subaru_key (car_id,part_id)
+values(11,23);
+insert into subaru_key (car_id,part_id)
+values(12,23);
+insert into subaru_key (car_id,part_id)
+values(13,23);
+insert into subaru_key (car_id,part_id)
+values(14,23);
+insert into subaru_key (car_id,part_id)
+values(15,23);
+insert into subaru_key (car_id,part_id)
+values(16,23);
+insert into subaru_key (car_id,part_id)
+values(17,23);
+insert into subaru_key (car_id,part_id)
+values(18,23);
+insert into subaru_key (car_id,part_id)
+values(19,23);
+insert into subaru_key (car_id,part_id)
+values(20,23);
+insert into subaru_key (car_id,part_id)
+values(21,23);
+insert into subaru_key (car_id,part_id)
+values(22,23);
+insert into subaru_key (car_id,part_id)
+values(23,23);
+insert into subaru_key (car_id,part_id)
+values(24,23);
+insert into subaru_key (car_id,part_id)
+values(25,23);
+insert into subaru_key (car_id,part_id)
+values(26,23);
+insert into subaru_key (car_id,part_id)
+values(27,23);
+insert into subaru_key (car_id,part_id)
+values(28,23);
+insert into subaru_key (car_id,part_id)
+values(29,23);
+insert into subaru_key (car_id,part_id)
+values(30,23);
+insert into subaru_key (car_id,part_id)
+values(31,23);
+insert into subaru_key (car_id,part_id)
+values(32,23);
+insert into subaru_key (car_id,part_id)
+values(33,23);
+
+--WRX Wiper Blade Left
+
+insert into subaru_key (car_id,part_id)
+values(1,24);
+insert into subaru_key (car_id,part_id)
+values(2,24);
+insert into subaru_key (car_id,part_id)
+values(3,24);
+insert into subaru_key (car_id,part_id)
+values(4,24);
+insert into subaru_key (car_id,part_id)
+values(5,24);
+insert into subaru_key (car_id,part_id)
+values(6,24);
+insert into subaru_key (car_id,part_id)
+values(7,24);
+insert into subaru_key (car_id,part_id)
+values(8,24);
+insert into subaru_key (car_id,part_id)
+values(9,24);
+
+--WRX Wiper Blade Right
+
+insert into subaru_key (car_id,part_id)
+values(1,25);
+insert into subaru_key (car_id,part_id)
+values(2,25);
+insert into subaru_key (car_id,part_id)
+values(3,25);
+insert into subaru_key (car_id,part_id)
+values(4,25);
+insert into subaru_key (car_id,part_id)
+values(5,25);
+insert into subaru_key (car_id,part_id)
+values(6,25);
+insert into subaru_key (car_id,part_id)
+values(7,25);
+insert into subaru_key (car_id,part_id)
+values(8,25);
+insert into subaru_key (car_id,part_id)
+values(9,25);
+
+--Outback/Legacy/WRX Headlamp bulb
+
+insert into subaru_key (car_id,part_id)
+values(10,26);
+insert into subaru_key (car_id,part_id)
+values(11,26);
+insert into subaru_key (car_id,part_id)
+values(12,26);
+insert into subaru_key (car_id,part_id)
+values(13,26);
+insert into subaru_key (car_id,part_id)
+values(14,26);
+insert into subaru_key (car_id,part_id)
+values(15,26);
+insert into subaru_key (car_id,part_id)
+values(16,26);
+insert into subaru_key (car_id,part_id)
+values(17,26);
+insert into subaru_key (car_id,part_id)
+values(18,26);
+insert into subaru_key (car_id,part_id)
+values(19,26);
+insert into subaru_key (car_id,part_id)
+values(20,26);
+insert into subaru_key (car_id,part_id)
+values(21,26);
+insert into subaru_key (car_id,part_id)
+values(22,26);
+insert into subaru_key (car_id,part_id)
+values(23,26);
+insert into subaru_key (car_id,part_id)
+values(24,26);
+insert into subaru_key (car_id,part_id)
+values(25,26);
+insert into subaru_key (car_id,part_id)
+values(26,26);
+insert into subaru_key (car_id,part_id)
+values(27,26);
+insert into subaru_key (car_id,part_id)
+values(28,26);
+insert into subaru_key (car_id,part_id)
+values(29,26);
+insert into subaru_key (car_id,part_id)
+values(30,26);
+insert into subaru_key (car_id,part_id)
+values(31,26);
+insert into subaru_key (car_id,part_id)
+values(32,26);
+insert into subaru_key (car_id,part_id)
+values(33,26);
+insert into subaru_key (car_id,part_id)
+values(1,26);
+insert into subaru_key (car_id,part_id)
+values(2,26);
+insert into subaru_key (car_id,part_id)
+values(3,26);
+insert into subaru_key (car_id,part_id)
+values(4,26);
+insert into subaru_key (car_id,part_id)
+values(5,26);
+insert into subaru_key (car_id,part_id)
+values(6,26);
+insert into subaru_key (car_id,part_id)
+values(7,26);
+insert into subaru_key (car_id,part_id)
+values(8,26);
+insert into subaru_key (car_id,part_id)
+values(9,26);
+
+--Outback/Legacy/WRX Signal Lamp Bulb
+
+insert into subaru_key (car_id,part_id)
+values(10,27);
+insert into subaru_key (car_id,part_id)
+values(11,27);
+insert into subaru_key (car_id,part_id)
+values(12,27);
+insert into subaru_key (car_id,part_id)
+values(13,27);
+insert into subaru_key (car_id,part_id)
+values(14,27);
+insert into subaru_key (car_id,part_id)
+values(15,27);
+insert into subaru_key (car_id,part_id)
+values(16,27);
+insert into subaru_key (car_id,part_id)
+values(17,27);
+insert into subaru_key (car_id,part_id)
+values(18,27);
+insert into subaru_key (car_id,part_id)
+values(19,27);
+insert into subaru_key (car_id,part_id)
+values(20,27);
+insert into subaru_key (car_id,part_id)
+values(21,27);
+insert into subaru_key (car_id,part_id)
+values(22,27);
+insert into subaru_key (car_id,part_id)
+values(23,27);
+insert into subaru_key (car_id,part_id)
+values(24,27);
+insert into subaru_key (car_id,part_id)
+values(25,27);
+insert into subaru_key (car_id,part_id)
+values(26,27);
+insert into subaru_key (car_id,part_id)
+values(27,27);
+insert into subaru_key (car_id,part_id)
+values(28,27);
+insert into subaru_key (car_id,part_id)
+values(29,27);
+insert into subaru_key (car_id,part_id)
+values(30,27);
+insert into subaru_key (car_id,part_id)
+values(31,27);
+insert into subaru_key (car_id,part_id)
+values(32,27);
+insert into subaru_key (car_id,part_id)
+values(33,27);
+insert into subaru_key (car_id,part_id)
+values(1,27);
+insert into subaru_key (car_id,part_id)
+values(2,27);
+insert into subaru_key (car_id,part_id)
+values(3,27);
+insert into subaru_key (car_id,part_id)
+values(4,27);
+insert into subaru_key (car_id,part_id)
+values(5,27);
+insert into subaru_key (car_id,part_id)
+values(6,27);
+insert into subaru_key (car_id,part_id)
+values(7,27);
+insert into subaru_key (car_id,part_id)
+values(8,27);
+insert into subaru_key (car_id,part_id)
+values(9,27);
+
+--Outback/Legacy/WRX Backup Lamp Bulb
+
+insert into subaru_key (car_id,part_id)
+values(10,28);
+insert into subaru_key (car_id,part_id)
+values(11,28);
+insert into subaru_key (car_id,part_id)
+values(12,28);
+insert into subaru_key (car_id,part_id)
+values(13,28);
+insert into subaru_key (car_id,part_id)
+values(14,28);
+insert into subaru_key (car_id,part_id)
+values(15,28);
+insert into subaru_key (car_id,part_id)
+values(16,28);
+insert into subaru_key (car_id,part_id)
+values(17,28);
+insert into subaru_key (car_id,part_id)
+values(18,28);
+insert into subaru_key (car_id,part_id)
+values(19,28);
+insert into subaru_key (car_id,part_id)
+values(20,28);
+insert into subaru_key (car_id,part_id)
+values(21,28);
+insert into subaru_key (car_id,part_id)
+values(22,28);
+insert into subaru_key (car_id,part_id)
+values(23,28);
+insert into subaru_key (car_id,part_id)
+values(24,28);
+insert into subaru_key (car_id,part_id)
+values(25,28);
+insert into subaru_key (car_id,part_id)
+values(26,28);
+insert into subaru_key (car_id,part_id)
+values(27,28);
+insert into subaru_key (car_id,part_id)
+values(28,28);
+insert into subaru_key (car_id,part_id)
+values(29,28);
+insert into subaru_key (car_id,part_id)
+values(30,28);
+insert into subaru_key (car_id,part_id)
+values(31,28);
+insert into subaru_key (car_id,part_id)
+values(32,28);
+insert into subaru_key (car_id,part_id)
+values(33,28);
+insert into subaru_key (car_id,part_id)
+values(1,28);
+insert into subaru_key (car_id,part_id)
+values(2,28);
+insert into subaru_key (car_id,part_id)
+values(3,28);
+insert into subaru_key (car_id,part_id)
+values(4,28);
+insert into subaru_key (car_id,part_id)
+values(5,28);
+insert into subaru_key (car_id,part_id)
+values(6,28);
+insert into subaru_key (car_id,part_id)
+values(7,28);
+insert into subaru_key (car_id,part_id)
+values(8,28);
+insert into subaru_key (car_id,part_id)
+values(9,28);
+
+--WRX Left Tail Lamp
+
+insert into subaru_key (car_id,part_id)
+values(1,29);
+insert into subaru_key (car_id,part_id)
+values(2,29);
+insert into subaru_key (car_id,part_id)
+values(3,29);
+insert into subaru_key (car_id,part_id)
+values(4,29);
+insert into subaru_key (car_id,part_id)
+values(5,29);
+insert into subaru_key (car_id,part_id)
+values(6,29);
+insert into subaru_key (car_id,part_id)
+values(7,29);
+insert into subaru_key (car_id,part_id)
+values(8,29);
+insert into subaru_key (car_id,part_id)
+values(9,29);
+
+--WRX Right Tail Lamp
+
+insert into subaru_key (car_id,part_id)
+values(1,30);
+insert into subaru_key (car_id,part_id)
+values(2,30);
+insert into subaru_key (car_id,part_id)
+values(3,30);
+insert into subaru_key (car_id,part_id)
+values(4,30);
+insert into subaru_key (car_id,part_id)
+values(5,30);
+insert into subaru_key (car_id,part_id)
+values(6,30);
+insert into subaru_key (car_id,part_id)
+values(7,30);
+insert into subaru_key (car_id,part_id)
+values(8,30);
+insert into subaru_key (car_id,part_id)
+values(9,30);
+
+--WRX Left Headlamp Housing
+
+insert into subaru_key (car_id,part_id)
+values(1,31);
+insert into subaru_key (car_id,part_id)
+values(2,31);
+insert into subaru_key (car_id,part_id)
+values(3,31);
+insert into subaru_key (car_id,part_id)
+values(4,31);
+insert into subaru_key (car_id,part_id)
+values(5,31);
+insert into subaru_key (car_id,part_id)
+values(6,31);
+insert into subaru_key (car_id,part_id)
+values(7,31);
+insert into subaru_key (car_id,part_id)
+values(8,31);
+insert into subaru_key (car_id,part_id)
+values(9,31);
+
+--WRX Right Headlamp housing
+
+insert into subaru_key (car_id,part_id)
+values(1,32);
+insert into subaru_key (car_id,part_id)
+values(2,32);
+insert into subaru_key (car_id,part_id)
+values(3,32);
+insert into subaru_key (car_id,part_id)
+values(4,32);
+insert into subaru_key (car_id,part_id)
+values(5,32);
+insert into subaru_key (car_id,part_id)
+values(6,32);
+insert into subaru_key (car_id,part_id)
+values(7,32);
+insert into subaru_key (car_id,part_id)
+values(8,32);
+insert into subaru_key (car_id,part_id)
+values(9,32);
