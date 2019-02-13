@@ -1,0 +1,77 @@
+.outer-container{
+    width: 100%;
+    height:75px;
+    
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    position: sticky;
+    top:0px;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.logo-title{
+    margin-left: 10px;
+    font-weight: 800;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+}
+
+
+.store-logo{
+    height: 50px;
+    border-right: 1px solid darkgrey;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    padding-right: 10px;
+}
+.button-container{
+    display: flex;
+    position: absolute;
+    top: 16px;
+    right: 25px;
+
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+span{
+    margin-left: 18px;
+}
+.btn-cart{
+    cursor: pointer;
+    background-color: #386db3;
+    border: #428bca;
+    color: white;
+    height: 40px;
+    width: 80px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.btn-account{
+    cursor: pointer;
+    background-color: #505050;
+    border: #428bca;
+    color: white;
+    height: 40px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+}

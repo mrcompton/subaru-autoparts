@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 class Parts extends Component{
     constructor(props){
@@ -7,6 +8,11 @@ class Parts extends Component{
         this.state = {
             parts: {}
         }
+    }
+
+    componentDidMount(){
+        axios.get('/api/allparts')
+        
     }
 
     render(){

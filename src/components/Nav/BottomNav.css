@@ -1,0 +1,24 @@
+.bottom-nav{
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    width: 100%;
+    background-color:  #252525;
+    font-size: 16px;
+    color: white;
+    position: sticky;
+    top: 75px;
+}
+
+
+.nav-links{
+    display: flex;
+    flex-direction: row; 
+}
+
+span{
+    color: white;
+}
+span:hover {
+    color: #428bca
+}
