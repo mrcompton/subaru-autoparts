@@ -1,6 +1,6 @@
 const express = require('express')
-const massive = require('massive')
 require('dotenv').config()
+const massive = require('massive')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const ctrl = require('./controller')

@@ -8,7 +8,7 @@ const BottomNav = (props) => {
         <div className='bottom-nav'>
 
             <div className='nav-links'>
-                <Link to='/'><span>Home</span></Link>
+                <Link to='/'><span >Home</span></Link>
                 <Link to='/parts'><span>Parts</span></Link>
                 <Link to='/about'><span>About</span></Link>
                 <Link to='/contact'><span>Contact Us</span></Link>

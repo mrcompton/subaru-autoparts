@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PartsModal from '../PartsModal/PartsModal'
 import './Home.css'
 
 class Home extends Component {
@@ -6,10 +7,7 @@ class Home extends Component {
         super(props)
 
         this.state = {
-            year: null,
-            model: '',
-            trim: ''
-
+            modalShow: false
         }
     }
 
@@ -23,6 +21,7 @@ class Home extends Component {
 
     }
     render() {
+        let modalClose = () => this.setState({ modalShow: false })
         return (
             <div >
                 <div className='home-body'>
@@ -31,9 +30,10 @@ class Home extends Component {
                             <h2>Select Parts by Vehicle</h2>
                             <h7>Entering your vehicle information will help us find the right parts for your vehicle.</h7>
                             <div className='picker-btns'>
-                                <button className='btn-year dropdown' type='dropdown'>Year</button>
-                                <button className='btn-model dropdown'>Model</button>
-                                <button className='btn-trim dropdown'>Trim</button>
+                                <button className='dropdown' onClick={() => this.setState({ modalShow: true })}>Year</button>
+                                <button className='dropdown' onClick={() => this.setState({ modalShow: true })}>Model</button>
+                                <button className='dropdown' onClick={() => this.setState({ modalShow: true })}>Trim</button>
+                                <PartsModal show={this.state.modalShow} onHide={modalClose}/>
                             </div>
                         </form>
                     </div>
