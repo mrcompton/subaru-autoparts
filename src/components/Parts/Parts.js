@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './Parts.css'
+import {connect} from 'react-redux'
 
 class Parts extends Component {
     constructor(props) {
@@ -13,9 +14,11 @@ class Parts extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/allparts')
+        const {year,model,trim} = this.props
+        axios.post('/api/parts',{year,model,trim})
             .then(response => {
                 this.setState({ parts: response.data })
+                console.log(response.data)
             })
     }
 
@@ -48,4 +51,10 @@ class Parts extends Component {
     }
 }
 
-export default Parts
+const mapToProps = (reduxState) => {
+    const {year, model, trim } = reduxState
+    return{
+        year,model,trim
+    }
+}
+export default connect(mapToProps)(Parts)

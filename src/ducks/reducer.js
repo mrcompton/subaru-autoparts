@@ -1,22 +1,22 @@
 const initialState = {
-    selectedYear: null,
-    selectedModel: '',
-    selectedTrim: ''
+    year: null,
+    model: '',
+    trim: ''
 }
-const UPDATE_SELECTED_VEHICLE = 'UPDATE_SELECTED_VEHICLE'
+const UPDATE_VEHICLE = 'UPDATE_VEHICLE'
 
-export function updateSelectedVehicle(vehicleObj){
+export function updateVehicle(vehicleObj){
     return{
-        type: UPDATE_SELECTED_VEHICLE,
+        type: UPDATE_VEHICLE,
         payload: vehicleObj
     }
 }
 
 export default function reducer(state=initialState, action){
     switch(action.type){
-        case UPDATE_SELECTED_VEHICLE:
-            const {selectedYear,selectedModel,selectedTrim} = action.payload
-            return {...state, selectedYear, selectedModel, selectedTrim}
+        case UPDATE_VEHICLE:
+            const {year,model,trim} = action.payload
+            return {...state, year, model, trim}
         default:
             return state;
     }

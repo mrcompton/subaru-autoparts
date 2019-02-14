@@ -8,11 +8,10 @@ const TopNav = (props) => {
             <div >
                 <div className='inner-container'>
                     <div className='logo-container'>
-                        <img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img>
+                        <Link to ='/' className='logo-title'><img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img></Link>
                         <Link to ='/' className='logo-title'><div>SubaruAutoParts.com</div></Link>
                         
                         <div className='button-container'>
-                            
                             <Link to='/login'><button className="btn-account">My Account</button></Link>
                             <Link to='/cart'><button className='btn-cart'>My Cart</button></Link>
                         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PartsModal from '../PartsModal/PartsModal'
 import './Home.css'
+import {connect} from 'react-redux'
 
 class Home extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Home extends Component {
                     <div className='picker-frame'>
                         <form className='vehicle-picker'>
                             <h2>Select Parts by Vehicle</h2>
-                            <h7>Entering your vehicle information will help us find the right parts for your vehicle.</h7>
+                            <p>Entering your vehicle information will help us find the right parts for your vehicle.</p>
                             <div className='picker-btns'>
                                 <button className='dropdown' onClick={() => this.setState({ modalShow: true })}>Year</button>
                                 <button className='dropdown' onClick={() => this.setState({ modalShow: true })}>Model</button>
@@ -36,6 +37,7 @@ class Home extends Component {
                                 <PartsModal show={this.state.modalShow} onHide={modalClose}/>
                             </div>
                         </form>
+                
                     </div>
                 </div>
                 <h1>Featured Products</h1>
@@ -72,4 +74,12 @@ class Home extends Component {
     }
 }
 
-export default Home
+const mapToProps = (reduxState) => {
+    const {year, model, trim} = reduxState
+    return{
+      year,
+      model,
+      trim
+    }
+  }
+  export default connect(mapToProps)(Home)

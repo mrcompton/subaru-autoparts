@@ -24,5 +24,6 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 app.get('/api/allparts',ctrl.getAllParts)
+app.post('/api/parts',ctrl.getParts)
 
 app.listen(SERVER_PORT, () => {console.log('Vi hör dig på port', SERVER_PORT)})
