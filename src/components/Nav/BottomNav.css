@@ -60,4 +60,8 @@ span:hover {
         height: 75px;
         top: 50px;
     }
+    .fa-car{
+        display: none;
+    }
+    
 }

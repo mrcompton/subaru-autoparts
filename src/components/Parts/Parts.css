@@ -53,7 +53,7 @@ li{
     border: #428bca;
     color: white;
     height: 40px;
-    width: 120px;
+    width: 140px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 5px;
@@ -78,5 +78,19 @@ li{
     .product-container{
         flex-wrap: wrap;
         flex-direction: column;
+    }
+}
+
+@media(max-width: 700px){
+    .product-container{
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+@media(max-width: 420px){
+    .product-img{
+        width: 80%;
+        height: auto;
     }
 }

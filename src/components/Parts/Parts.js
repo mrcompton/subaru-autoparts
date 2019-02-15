@@ -43,7 +43,7 @@ class Parts extends Component {
             return (
                 <div className='product-container'>
                     <div className='product-pic'>
-                        <img src={part.picture} alt='' />
+                        <img className='product-img' src={part.picture} alt='' />
                     </div>
                     <ul className='product-desc'>
                         <li>- Product: {part.name}</li>

@@ -18,7 +18,7 @@ class BottomNav extends Component{
 
     }
     render(){
-        let modalClose = () => this.setState({ modalShow: false })
+        let modalClose = () => this.setState({ modalShow: false }) 
         return (
             <div className='footer-nav'>
     
@@ -26,7 +26,12 @@ class BottomNav extends Component{
                     <Link to='/'><span><i class="fas fa-home"></i></span></Link>
                     <Link to='/login'><span><i class="fas fa-user"></i></span></Link>
                     <Link to='/cart'><span><i class="fas fa-shopping-cart"></i></span></Link>
-                    <span className='menu'>Menu <i class="fas fa-bars"></i></span>
+                    <Link to='/'>
+                        <span id='parts-icon'onClick={() => this.setState({ modalShow: true })}>
+                            Parts<i class="fas fa-wrench"></i>
+
+                        </span>
+                    </Link>
                     {/* <Link to='/about'><span>About</span></Link>
                     <Link to='/contact'><span>Contact Us</span></Link> */}
                     <PartsModal show={this.state.modalShow} onHide={modalClose}/>

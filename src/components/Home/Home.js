@@ -65,7 +65,7 @@ class Home extends Component {
                         <div>
                             <p>Alternators</p>
                         </div>
-                    </div>
+                    </div> 
 
                 </div>
 
