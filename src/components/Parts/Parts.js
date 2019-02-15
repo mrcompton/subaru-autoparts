@@ -22,6 +22,22 @@ class Parts extends Component {
             })
     }
 
+    handleGetSelectedParts(){
+        const {year,model,trim} = this.props
+        axios.post('/api/parts',{year,model,trim})
+            .then(response => {
+                this.setState({ parts: response.data })
+                console.log(response.data)
+            })
+    }
+
+    handleGetAllParts(){
+        axios.get('/api/allparts')
+            .then(response => {
+                this.setState({ parts: response.data })
+            })
+    }
+
     render() {
         let mappedParts = this.state.parts.map(part => {
             return (
@@ -30,10 +46,10 @@ class Parts extends Component {
                         <img src={part.picture} alt='' />
                     </div>
                     <ul className='product-desc'>
-                        <li>Product: {part.name}</li>
-                        <li>Price: {part.price}</li>
-                        <li>Product Description: {part.description}</li>
-                        <li>Part Number: {part.part_num}</li>
+                        <li>- Product: {part.name}</li>
+                        <li>- Price: {part.price}</li>
+                        <li>- Product Description: {part.description}</li>
+                        <li>- Part Number: {part.part_num}</li>
                         <button className='btn-cart'>Add To Cart</button>
                     </ul>
                 </div>
@@ -41,7 +57,8 @@ class Parts extends Component {
         })
         return (
             <div>
-                <h1>Browse All Auto Parts</h1>
+                <button className ='btn-switch' onClick={() => this.handleGetSelectedParts()}>View vehicle-specific parts</button>
+                <button className ='btn-switch' onClick={() => this.handleGetAllParts()}>View all Subaru parts</button>
                 <div className='all-products'>
                     {mappedParts}
                 </div>

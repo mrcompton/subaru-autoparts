@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import './PartsModal.css'
 import Tabs from './ModalTabs'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class PartsModal extends React.Component {
 
@@ -27,7 +28,7 @@ class PartsModal extends React.Component {
                 <Modal.Footer>
                     <button className='btn-close' onClick={this.props.onHide}>Close</button>
                     {this.props.trim ?
-                        <button className='btn-save'>See Parts</button>
+                      <Link to='/parts'><button className='btn-save' onClick={this.props.onHide}>View Parts</button></Link> 
                         : null
                     }
 

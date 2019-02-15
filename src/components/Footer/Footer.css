@@ -1,0 +1,54 @@
+.footer-nav{
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    width: 100vw;
+    background-color:  darkblue;
+   
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    z-index: 200;
+}
+
+
+.footer-nav-links{
+    display: flex;
+    flex-direction: row; 
+}
+
+span{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+span:hover {
+    cursor: pointer;
+    color: white;
+}
+
+
+.fas{
+
+    color: white;
+    font-weight: 600;
+    size: 5x;
+
+}
+
+/* .fas:hover {
+    color: #428bca;
+    
+} */
+
+.menu{
+    position: absolute;
+    right: 10px;
+}
+
+
+@media(min-width:760px){
+    .footer-nav{
+     display: none;
+    }
+}

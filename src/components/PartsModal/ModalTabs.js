@@ -18,22 +18,25 @@ class ModalTabs extends React.Component {
 
   handleUpdateYear=(val) => {
     this.setState({
-      year: val
+      year: val,
+      model: '',
+      trim: '',
     })
     this.props.updateVehicle({
       year: val,
-      model: this.state.model,
-      trim: this.state.trim
+      model: '',
+      trim: ''
     })
   }
   handleUpdateModel(val) {
     this.setState({
-      model: val
+      model: val,
+      trim: ''
     })
     this.props.updateVehicle({  
       year: this.state.year,
       model: val,
-      trim: this.state.trim
+      trim: ''
     })
   }
   handleUpdateTrim(val) {
@@ -97,14 +100,14 @@ class ModalTabs extends React.Component {
 
   }
   render() {
-    const { year, model, trim } = this.state
+    const { year, model, trim } = this.props
 
     return (
       <div>
         <div className='selected-container'>
-          <p>Selected Year: <span className='selected'>{year}</span></p>
-          <p>Selected Model: <span className='selected'>{model}</span></p>
-          <p>Selected Trim: <span className='selected'>{trim}</span></p>
+          <p>Year: <span className='selected'>{year}</span></p>
+          <p>Model: <span className='selected'>{model}</span></p>
+          <p>Trim: <span className='selected'>{trim}</span></p>
         </div>
         <Tabs
           id="controlled-tab-example"

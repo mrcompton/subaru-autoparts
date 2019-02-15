@@ -1,5 +1,6 @@
 .home-body{
     height: 80vh;
+    max-width: 100vw;
     background-image: url('https://secure-akns.subaru.com/content/media/mp_fullscreen_1920/19_OBK_photos_ext_05.jpg');
     background-position: top;
     background-size: cover;  
@@ -24,24 +25,23 @@ z-index: 2;
     background-color: whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: .85;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items:center;
-    justify-content: flex-start; 
+    align-items:center; */
+    /* justify-content: flex-start;  */
 }
 
 .dropdown{
     cursor: pointer;
     /* background-color: #505050; */
     background-color: rgb(0, 0, 0);
-    border: #428bca;
+    border: black;
     color: white;
     height: 60px;
     width: 300px;
     font-weight: 700;
     font-size: 26px;
-
     border-radius: 5px;
     margin: 30px;
 }
@@ -58,4 +58,87 @@ z-index: 2;
     background-color: whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin:50px 50px 0 50px;
+}
+
+@media (max-width:1240px){
+    .dropdown{
+        cursor: pointer;
+        background-color: rgb(0, 0, 0);
+        border: black;
+        color: white;
+        height: 60px;
+        width: 200px;
+        font-weight: 700;
+        font-size: 26px;
+        border-radius: 5px;
+        margin: 30px;
+    }
+}
+
+@media (max-width:900px){
+    .dropdown{
+        cursor: pointer;
+        background-color: rgb(0, 0, 0);
+        border: black;
+        color: white;
+        height: 60px;
+        width: 300px;
+        font-weight: 700;
+        font-size: 26px;
+        border-radius: 5px;
+        margin: 30px;
+    }
+
+    .vehicle-picker{
+        height: 480px;
+        width: 80vw;
+        /* background-color: whitesmoke;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: .85; */
+    }
+
+    .picker-frame{
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top:10%;
+        left:6%;
+        margin-bottom: 90px;
+        margin-top: 90px;
+        z-index: 2;
+        }
+        
+}
+
+@media (max-width:460px){
+    .dropdown{
+        cursor: pointer;
+        background-color: rgb(0, 0, 0);
+        border: black;
+        color: white;
+        height: 60px;
+        width: 200px;
+        font-weight: 700;
+        font-size: 26px;
+        border-radius: 5px;
+        margin: 30px;
+    }
+
+    .vehicle-picker{
+        height: 480px;
+        width: 80vw;
+        /* background-color: whitesmoke;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: .85; */
+    }
+}
+
+@media(max-width:375px){
+    .vehicle-picker{
+        height: 520px;
+        width: 80vw;
+        /* background-color: whitesmoke;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: .85; */
+    }
 }
