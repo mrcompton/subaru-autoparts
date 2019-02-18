@@ -66,6 +66,12 @@ class Home extends Component {
                             <p>Alternators</p>
                         </div>
                     </div> 
+                    <div>
+                        <img className='products' src='https://parts.gillmansubarunorth.com/images/parts/subaru/productimages/fullsize/22401AA781%201.jpg' alt='' />
+                        <div>
+                            <p>Spark Plugs</p>
+                        </div>
+                    </div>
 
                 </div>
 

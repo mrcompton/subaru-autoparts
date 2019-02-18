@@ -5,8 +5,12 @@
 }
 
 .selected{
-    color: blue;
+    color: tomato;
     font-size: 22px;
+}
+.selected:hover{
+    color: tomato;
+    cursor: default;
 }
 
 .clicker-container{

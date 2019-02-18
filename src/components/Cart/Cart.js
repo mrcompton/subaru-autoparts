@@ -1,7 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
 
-class Cart extends Component{
-    constructor(props){
+class Cart extends Component {
+    constructor(props) {
         super(props)
 
         this.state = {
@@ -9,11 +10,29 @@ class Cart extends Component{
         }
     }
 
-    render(){
-        return(
-            <div>I am Cart</div>
+    render() {
+        const {year,model,trim} = this.props
+        return (
+            <div className='cart-parent'>
+                <h1>My Cart</h1>
+                <h4>{year} {model} {trim}</h4>
+                <div className='cart-container'>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
         )
     }
 }
 
-export default Cart
+const mapToProps = (reduxState) => {
+    const {year, model, trim} = reduxState
+    return{
+      year,
+      model,
+      trim
+    }
+  }
+  export default connect(mapToProps)(Cart)

@@ -3,7 +3,7 @@
     flex-direction: row;
     height: 55px;
     min-width: 100vw;
-    background-color:  darkblue;
+    background-color:  #252525;
     color: white;
     position: fixed;
     bottom: 0px;
@@ -20,19 +20,21 @@ span{
 }
 span:hover {
     cursor: pointer;
-    color: white;
+    color: rgb(218, 184, 32);
 }
 
 
 .fas{
 
-    color: white;
+    color: rgb(218, 184, 32);
     font-weight: 600;
     size: 5x;
-
+    margin: 15px 10px;
 
 }
-
+#parts-icon{
+    color: rgb(218, 184, 32); 
+}
 
 /* .fas:hover {
     color: #428bca;

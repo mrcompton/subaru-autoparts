@@ -23,12 +23,12 @@ class BottomNav extends Component{
             <div className='footer-nav'>
     
                 <div className='footer-nav-links'>
-                    <Link to='/'><span><i class="fas fa-home"></i></span></Link>
-                    <Link to='/login'><span><i class="fas fa-user"></i></span></Link>
-                    <Link to='/cart'><span><i class="fas fa-shopping-cart"></i></span></Link>
+                    <Link to='/'><span><i className="fas fa-home"></i></span></Link>
+                    <Link to='/login'><span><i className="fas fa-user"></i></span></Link>
+                    <Link to='/cart'><span><i className="fas fa-shopping-cart"></i></span></Link>
                     <Link to='/'>
                         <span id='parts-icon'onClick={() => this.setState({ modalShow: true })}>
-                            Parts<i class="fas fa-wrench"></i>
+                            Parts<i className="fas fa-wrench"></i>
 
                         </span>
                     </Link>

@@ -17,5 +17,17 @@ module.exports = {
 
         let parts = await dbInstance.getParts({year: year, model: model, trim: trim})
         res.status(200).send(parts)
+    },
+
+    addToCart: (req,res) => {
+
+    },
+
+    editCart: (req,res) => {
+
+    },
+
+    removeFromCart: (req,res) => {
+
     }
 }
