@@ -1,0 +1,57 @@
+.auth-body{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 50px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.form{
+    background-color: whitesmoke;
+    padding: 50px 100px 50px 100px;
+}
+
+
+input{
+    width: 400px;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+}
+
+.btn-login{
+    cursor: pointer;
+    background-color: #5cb85c;
+    border: 1px solid  #5cb85c;
+    border-radius: 3px;
+    color: white;
+    height: 40px;
+    width: 400px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+.btn-register{
+    cursor: pointer;
+    background-color: #386db3;
+    border: 1px solid  #386db3;
+    border-radius: 3px;
+    color: white;
+    height: 40px;
+    width: 400px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+.fa-user{
+    color: white
+}

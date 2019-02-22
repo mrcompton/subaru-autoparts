@@ -5,7 +5,10 @@ import BottomNav from './components/Nav/BottomNav'
 import routes from './routes'
 import Footer from './components/Footer/Footer'
 
+
 class App extends Component {
+
+
   render() {
     return (
       <div className="App">

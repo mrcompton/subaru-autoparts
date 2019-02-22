@@ -1,29 +1,60 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import axios from 'axios'
+import {updateUser} from '../../ducks/reducer'
 import './TopNav.css'
-const TopNav = (props) => {
-    return (
-        <div className='outer-container'>
-            <div >
-                <div className='inner-container'>
-                    <div className='logo-container'>
-                        <div>
-                            
-                        </div>
-                        <Link to ='/' className='logo-title'><img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img></Link>
-                        <Link to ='/' className='logo-title'><div>SubaruAutoParts.com</div></Link>
-                        
-                        <div className='button-container'>
-                            <Link to='/login'><button className="btn-account">My Account</button></Link>
-                            <Link to='/cart'><button className='btn-cart'>My Cart</button></Link>
+
+class TopNav extends Component {
+    handleLogout = () => {
+        axios.post('/api/logout')
+            .then(res => {
+                this.props.updateUser({})
+                this.props.history.push('/')
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    render() {
+        return (
+            <div className='outer-container'>
+                <div >
+                    <div className='inner-container'>
+                        <div className='logo-container'>
+                            <div>
+
+                            </div>
+                            <Link to='/' ><img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img></Link>
+                            <Link to='/' ><div className='logo-title'>SubaruAutoParts.com</div></Link>
+
+                            <div className='button-container'>
+                                {
+                                    this.props.email
+                                        ?
+                                        <button className="btn-account" onClick={this.handleLogout}>Logout</button>
+                                        :
+                                        <Link to='/login'><button className="btn-account">My Account</button></Link>
+                                }
+
+                                <Link to='/cart'><button className='btn-cart'>My Cart</button></Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
-export default withRouter(TopNav)
+const mapToProps = (reduxState) => {
+    const { email } = reduxState
+    return {
+        email
+    }
+}
+
+export default withRouter(connect(mapToProps,{updateUser})(TopNav))

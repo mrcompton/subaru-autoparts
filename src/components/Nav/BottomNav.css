@@ -17,12 +17,16 @@
     flex-direction: row; 
 }
 
-span{
+.link-span{
     color: white;
+    text-decoration: underline #252525;
+    
 }
-span:hover {
-    color: #428bca;
+.link-span:hover {
+    color: rgb(218, 184, 32);
     cursor: pointer;
+    text-decoration: underline #252525;
+    
 }
 
 .selected-v{
@@ -53,6 +57,14 @@ span:hover {
     .nav-links{
         display: none;
     }
+    .fa-car{
+        display: none;
+    }
+    .selected-v{
+        position: relative;
+        left: 15px;
+  
+    }
 }
 
 @media(max-width:420px){
@@ -63,5 +75,11 @@ span:hover {
     .fa-car{
         display: none;
     }
+    .selected-v{
+        position: relative;
+        left: 5px;
+  
+    }
+   
     
 }

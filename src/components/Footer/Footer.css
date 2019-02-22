@@ -11,16 +11,19 @@
 }
 
 
+/* .footer-nav-links{
+    position: fixed;
+    right: 10px;
+} */
 
-
-span{
-    color: white;
+.icons{
     font-size: 20px;
     font-weight: 600;
+    text-decoration: underline #252525;
 }
-span:hover {
+.icons:hover {
     cursor: pointer;
-    color: rgb(218, 184, 32);
+    text-decoration: underline #252525;
 }
 
 
@@ -28,18 +31,19 @@ span:hover {
 
     color: rgb(218, 184, 32);
     font-weight: 600;
-    size: 5x;
+    size: 8x;
     margin: 15px 10px;
-
 }
+
+.fas:hover {
+    color: rgb(218, 184, 32)   
+}
+
 #parts-icon{
-    color: rgb(218, 184, 32); 
+    color: rgb(218, 184, 32) ; 
 }
 
-/* .fas:hover {
-    color: #428bca;
-    
-} */
+
 
 /* .menu{
     position: absolute;
