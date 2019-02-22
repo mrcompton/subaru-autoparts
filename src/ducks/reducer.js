@@ -5,11 +5,11 @@ const initialState = {
     id: '', //user id
     username: '',
     email: '',
-    cart: []
+    cartItems: []
 }
 const UPDATE_VEHICLE = 'UPDATE_VEHICLE'
 const UPDATE_USER = 'UPDATE_USER'
-const UPDATE_CART = 'UPDATE_CART'
+const ADD_TO_CART = 'ADD_TO_CART'
 
 export function updateVehicle(vehicleObj){
     return{
@@ -25,10 +25,10 @@ export function updateUser(userObj){
     }
 }
 
-export function updateCart(cartObj){
+export function addToCart(product){
     return{
-        type: UPDATE_CART,
-        payload: cartObj
+        type: ADD_TO_CART,
+        payload: product
     }
 }
 
@@ -40,9 +40,8 @@ export default function reducer(state=initialState, action){
         case UPDATE_USER:
             const {id,username,email} =  action.payload
             return {...state, id, username, email}
-        case UPDATE_CART:
-            const {cart} = action.payload
-            return {...state, cart}
+        case ADD_TO_CART:
+            return Object.assign({}, state, {cartItems: [...state.cartItems, action.payload]});
         default:
             return state;
     }

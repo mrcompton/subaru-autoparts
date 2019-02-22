@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import {updateUser} from '../../ducks/reducer'
+import { updateUser } from '../../ducks/reducer'
 import './TopNav.css'
 
 class TopNav extends Component {
@@ -30,6 +30,7 @@ class TopNav extends Component {
                             <Link to='/' ><img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img></Link>
                             <Link to='/' ><div className='logo-title'>SubaruAutoParts.com</div></Link>
 
+
                             <div className='button-container'>
                                 {
                                     this.props.email
@@ -38,7 +39,6 @@ class TopNav extends Component {
                                         :
                                         <Link to='/login'><button className="btn-account">My Account</button></Link>
                                 }
-
                                 <Link to='/cart'><button className='btn-cart'>My Cart</button></Link>
                             </div>
                         </div>
@@ -57,4 +57,4 @@ const mapToProps = (reduxState) => {
     }
 }
 
-export default withRouter(connect(mapToProps,{updateUser})(TopNav))
+export default withRouter(connect(mapToProps, { updateUser })(TopNav))

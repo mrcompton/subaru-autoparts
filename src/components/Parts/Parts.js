@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Parts.css'
 import {connect} from 'react-redux'
+import {addToCart} from '../../ducks/reducer'
 
 class Parts extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Parts extends Component {
 
         this.state = {
             parts: [],
-            cart: []
+            cartItems: []
         }
     }
 
@@ -35,10 +36,13 @@ class Parts extends Component {
         axios.get('/api/allparts')
             .then(response => {
                 this.setState({ parts: response.data })
+                console.log(response.data)
             })
     }
 
+  
     render() {
+        console.log(this.props)
         let mappedParts = this.state.parts.map(part => {
             return (
                 <div className='product-container'>
@@ -50,7 +54,7 @@ class Parts extends Component {
                         <li>- Price: {part.price}</li>
                         <li>- Product Description: {part.description}</li>
                         <li>- Part Number: {part.part_num}</li>
-                        <button className='btn-cart'>Add To Cart</button>
+                        <button className='btn-cart' onClick={() => this.props.addToCart(part)}>Add To Cart</button>
                     </ul>
                 </div>
             )
@@ -69,9 +73,9 @@ class Parts extends Component {
 }
 
 const mapToProps = (reduxState) => {
-    const {year, model, trim } = reduxState
+    const {year, model, trim, cartItems} = reduxState
     return{
-        year,model,trim
+        year,model,trim,cartItems
     }
 }
-export default connect(mapToProps)(Parts)
+export default connect(mapToProps,{addToCart})(Parts)
