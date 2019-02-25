@@ -75,12 +75,12 @@ module.exports = {
         res.sendStatus(200)
     },
 
-    getUser: (req,res) => {
+    addToCart: async (req,res) => {
+        let {part_num, email, quantity, total} = req.body
+        const dbInstance = req.app.get('db')
 
-    },
-
-    addToCart: (req,res) => {
-
+        let cartItem = await dbInstance.addToCart({part_num: part_num, email: email, quantity: quantity, total: total})
+        res.sendStatus(200)
     },
 
     editCart: (req,res) => {

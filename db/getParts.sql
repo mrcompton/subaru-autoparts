@@ -2,6 +2,7 @@ select
 cars.year,
 cars.model,
 cars.trim,
+parts.id,
 parts.name,
 parts.description,
 parts.price,

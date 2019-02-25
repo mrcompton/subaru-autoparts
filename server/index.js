@@ -29,7 +29,10 @@ app.post('/api/parts',ctrl.getParts)
 //authentication
 app.post('/api/register',ctrl.register)
 app.post('/api/login',ctrl.login)
-app.post('/api/logout', ctrl.logout)
-app.get('/api/user',ctrl.getUser)
+app.get('/api/logout', ctrl.logout)
+//shopping cart
+app.post('/api/cart',ctrl.addToCart)
+app.put('/api/cart/:id',ctrl.editCart)
+app.delete('/api/cart/:id',ctrl.removeFromCart)
 
 app.listen(SERVER_PORT, () => {console.log('Vi hör dig på port', SERVER_PORT)})

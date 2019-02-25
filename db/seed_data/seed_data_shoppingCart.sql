@@ -1,35 +1,19 @@
-create table if not exists cart(
+-- drop table subaru_cart;
+
+create table if not exists subaru_cart(
 id serial primary key,
+part_num text,
+email text references subaru_users(email),
 quantity integer,
-total decimal,
-part_id integer references parts(id)
+total decimal
 );
-
-
---show all items in cart
-
-select 
-parts.name,
-parts.price,
-parts.picture,
-cart.quantity,
-cart.total
-from cart
-join parts on cart.part_id = parts.id;
 
 --add item to cart
 
-insert into cart(quantity, total, part_id)
-values(2, 12.44, 1); --can you do math in sql (adding prices to get total?) Or is it better to do in JS?
+insert into subaru_cart(part_num,email,quantity,total)
+values('15208AA15A', 'e@e.com', 2, 10.62);
 
-insert into cart(quantity, total, part_id)
-values(1, 16.59, 3);
+insert into subaru_cart(part_num,email,quantity,total)
+values('15208AA15A', 'a@a.com', 1, 5.31); 
 
---remove item from cart
-
-delete from cart
-where id = 4
-
---edit quantity in cart
-
-update cart set quantity=3, total=18.66 where id = 1;  --make sure to do the math to update total in js, before you pass in the new total
+-- select * from subaru_cart

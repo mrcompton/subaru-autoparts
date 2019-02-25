@@ -40,6 +40,16 @@ class Parts extends Component {
             })
     }
 
+    handleAddtoCart = (part) => {
+        this.props.addToCart(part)
+        if(this.props.trim && this.props.email){
+            axios.post('/api/cart', {part_num: part.part_num, email: this.props.email, quanity: null, total: null})
+            .then(response => {
+                console.log(response)
+            })
+        }
+    }
+
   
     render() {
         console.log(this.props)
@@ -51,10 +61,10 @@ class Parts extends Component {
                     </div>
                     <ul className='product-desc'>
                         <li>- Product: {part.name}</li>
-                        <li>- Price: {part.price}</li>
+                        <li>- Price: ${part.price}</li>
                         <li>- Product Description: {part.description}</li>
                         <li>- Part Number: {part.part_num}</li>
-                        <button className='btn-cart' onClick={() => this.props.addToCart(part)}>Add To Cart</button>
+                        <button className='btn-cart' onClick={() => this.handleAddtoCart(part)}>Add To Cart</button>
                     </ul>
                 </div>
             )
@@ -73,9 +83,9 @@ class Parts extends Component {
 }
 
 const mapToProps = (reduxState) => {
-    const {year, model, trim, cartItems} = reduxState
+    const {year, model, trim, cartItems, email} = reduxState
     return{
-        year,model,trim,cartItems
+        year,model,trim,cartItems,email
     }
 }
 export default connect(mapToProps,{addToCart})(Parts)

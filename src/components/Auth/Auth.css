@@ -2,19 +2,22 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    flex-wrap: wrap;
     margin: 50px;
 }
 
 .form-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
     margin: 10px;
+    align-items: center;
 }
 
 .form{
     background-color: whitesmoke;
+    margin: 15px;
     padding: 50px 100px 50px 100px;
+    align-items: center;
 }
 
 
@@ -24,7 +27,7 @@ input{
     border-radius: 3px;
 }
 
-.btn-login{
+.login{
     cursor: pointer;
     background-color: #5cb85c;
     border: 1px solid  #5cb85c;
@@ -38,7 +41,7 @@ input{
     margin-top: 12px;
 }
 
-.btn-register{
+.register{
     cursor: pointer;
     background-color: #386db3;
     border: 1px solid  #386db3;
@@ -54,4 +57,26 @@ input{
 
 .fa-user{
     color: white
+}
+
+@media(max-width: 760px){
+
+  .form{
+    width: auto;
+    padding: 0px;
+    background-color: white;
+  }
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: flex-start;
+}
+
+  input{
+    width: auto;
+  }
+  .btn{
+    width: 170px;
+  }
 }

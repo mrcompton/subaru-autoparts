@@ -24,7 +24,11 @@ class BottomNav extends Component{
     
                 <div className='nav-links'>
                     <Link to='/'><span className='link-span'>Home</span></Link>
-                    <Link to='/'><span className='link-span' onClick={() => this.setState({ modalShow: true })}>Parts</span></Link>
+                    
+                    {this.props.trim 
+                    ? <Link to='/parts'><span className='link-span'>Parts</span></Link>
+                    : <Link to='/'><span className='link-span' onClick={() => this.setState({ modalShow: true })}>Parts</span></Link>
+                    }
                     <Link to='/about'><span className='link-span'>About</span></Link>
                     <Link to='/contact'><span className='link-span'>Contact Us</span></Link>
                     <PartsModal show={this.state.modalShow} onHide={modalClose}/>

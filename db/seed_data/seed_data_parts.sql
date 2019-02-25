@@ -1,6 +1,6 @@
 create table if not exists parts(
 id serial primary key,
-part_num text,
+part_num text unique,
 category text,
 name text,
 description text,

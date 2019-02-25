@@ -8,7 +8,7 @@ import './TopNav.css'
 
 class TopNav extends Component {
     handleLogout = () => {
-        axios.post('/api/logout')
+        axios.get('/api/logout')
             .then(res => {
                 this.props.updateUser({})
                 this.props.history.push('/')

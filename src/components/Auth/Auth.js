@@ -60,7 +60,7 @@ class Auth extends Component {
                         <div>Password:  </div>
                         <input type='password' onChange={(e) => this.handleChange('password',e.target.value)}/>
                         <div>
-                            <button className='btn-login' onClick={this.handleLogin}>Login</button>
+                            <button className='btn login' onClick={this.handleLogin}>Login</button>
                         </div>
                     </div>
                     <div className='form'>
@@ -70,7 +70,7 @@ class Auth extends Component {
                         <div>Password:  </div>
                         <input type='password' onChange={(e) => this.handleChange('password',e.target.value)}/>
                         <div >
-                            <button className='btn-register' onClick={this.handleRegister}>Register</button>
+                            <button className='btn register' onClick={this.handleRegister}>Register</button>
                         </div>
                     </div>
                 </div>
