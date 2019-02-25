@@ -8,15 +8,6 @@ price decimal,
 picture text
 );
 
-insert into parts (part_num, category, name, description, price, picture)
-values (
-'15208AA170',
-'Engine Parts',
-'Oil Filter',
-'Impreza. WRX. 2.0L. Without turbo.',
-6.22,
-'https://www.subarupartspros.com/media/catalog/product/cache/4/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/o/i/oilfilter-18-spp_3.jpg'
-);
 
 insert into parts (part_num, category, name, description, price, picture)
 values (

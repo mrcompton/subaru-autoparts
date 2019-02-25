@@ -19,6 +19,15 @@ module.exports = {
         res.status(200).send(parts)
     },
 
+    addPart: async (req,res) => {
+        const {part_num, category, name, description, price, picture} = req.body
+        const dbInstance = req.app.get('db')
+
+        let newPart = await dbInstance.addPart({part_num, category, name, description, price, picture})
+        res.status(200).send(newPart)
+        
+    },
+
     register: async (req,res) => {
         let {email,password} = req.body
         let {session} = req
@@ -75,19 +84,19 @@ module.exports = {
         res.sendStatus(200)
     },
 
-    addToCart: async (req,res) => {
-        let {part_num, email, quantity, total} = req.body
-        const dbInstance = req.app.get('db')
+    // addToCart: async (req,res) => {
+    //     let {part_num, email, quantity, total} = req.body
+    //     const dbInstance = req.app.get('db')
 
-        let cartItem = await dbInstance.addToCart({part_num: part_num, email: email, quantity: quantity, total: total})
-        res.sendStatus(200)
-    },
+    //     let cartItem = await dbInstance.addToCart({part_num: part_num, email: email, quantity: quantity, total: total})
+    //     res.sendStatus(200)
+    // },
 
-    editCart: (req,res) => {
+    // editCart: (req,res) => {
 
-    },
+    // },
 
-    removeFromCart: (req,res) => {
+    // removeFromCart: (req,res) => {
 
-    }
+    // }
 }

@@ -42,20 +42,14 @@ class Parts extends Component {
 
     handleAddtoCart = (part) => {
         this.props.addToCart(part)
-        if(this.props.trim && this.props.email){
-            axios.post('/api/cart', {part_num: part.part_num, email: this.props.email, quanity: null, total: null})
-            .then(response => {
-                console.log(response)
-            })
-        }
     }
 
   
     render() {
         console.log(this.props)
-        let mappedParts = this.state.parts.map(part => {
+        let mappedParts = this.state.parts.map((part,index) => {
             return (
-                <div className='product-container'>
+                <div key={index} className='product-container'>
                     <div className='product-pic'>
                         <img className='product-img' src={part.picture} alt='' />
                     </div>
@@ -64,15 +58,32 @@ class Parts extends Component {
                         <li>- Price: ${part.price}</li>
                         <li>- Product Description: {part.description}</li>
                         <li>- Part Number: {part.part_num}</li>
-                        <button className='btn-cart' onClick={() => this.handleAddtoCart(part)}>Add To Cart</button>
+                        {/* <button className='btn-cart' onClick={() => this.handleAddtoCart(part)}>Add To Cart</button> */}
+                        {
+                             this.props.email==='admin@admin.com'
+                             ?
+                                <div>
+                                    <button className ='btn edit-parts'>Edit Part</button>
+                                    <button className ='btn edit-parts'>Remove Part</button>
+                                    <button className = 'btn edit-parts attach'>Attach to Vehicle</button>
+                                    <button className='btn-cart' onClick={() => this.handleAddtoCart(part)}>Add To Cart</button>
+                                </div>
+                             :<button className='btn-cart' onClick={() => this.handleAddtoCart(part)}>Add To Cart</button>
+                        }
                     </ul>
                 </div>
             )
         })
         return (
             <div>
+                {this.props.email==='admin@admin.com'
+                    ?<button className ='add-parts'>Add Part</button>
+                    :null
+                }
                 <button className ='btn-switch' onClick={() => this.handleGetSelectedParts()}>View vehicle-specific parts</button>
                 <button className ='btn-switch' onClick={() => this.handleGetAllParts()}>View all Subaru parts</button>
+             
+                
                 <div className='all-products'>
                     {mappedParts}
                 </div>
