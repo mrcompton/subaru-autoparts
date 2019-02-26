@@ -17,3 +17,5 @@ export default () => {
 
 export const store = createStore(persistedReducer)
 export const persistor = persistStore(store)
+
+// export default createStore(reducer)

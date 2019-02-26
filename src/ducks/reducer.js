@@ -10,6 +10,7 @@ const initialState = {
 const UPDATE_VEHICLE = 'UPDATE_VEHICLE'
 const UPDATE_USER = 'UPDATE_USER'
 const ADD_TO_CART = 'ADD_TO_CART'
+const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 
 export function updateVehicle(vehicleObj){
     return{
@@ -32,6 +33,12 @@ export function addToCart(product){
     }
 }
 
+export function removeFromCart(productIndex){
+    return{
+        type: REMOVE_FROM_CART,
+        payload: productIndex
+    }
+}
 export default function reducer(state=initialState, action){
     switch(action.type){
         case UPDATE_VEHICLE:
@@ -42,6 +49,10 @@ export default function reducer(state=initialState, action){
             return {...state, id, username, email}
         case ADD_TO_CART:
             return Object.assign({}, state, {cartItems: [...state.cartItems, action.payload]});
+        case REMOVE_FROM_CART:
+            let newArr = state.cartItems.slice()
+            newArr.splice(action.payload, 1)
+            return Object.assign({},state, {cartItems: newArr})
         default:
             return state;
     }

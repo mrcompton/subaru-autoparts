@@ -27,6 +27,8 @@ massive(CONNECTION_STRING).then(db => {
 app.get('/api/allparts',ctrl.getAllParts)
 app.post('/api/parts',ctrl.getParts)
 app.post('/api/part',ctrl.addPart)
+app.put('/api/part/:id',ctrl.editPart)
+app.delete('/api/part/:id',ctrl.deletePart)
 //authentication
 app.post('/api/register',ctrl.register)
 app.post('/api/login',ctrl.login)

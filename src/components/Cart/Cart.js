@@ -1,22 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './Cart.css'
+import { removeFromCart } from '../../ducks/reducer'
+import {Link} from 'react-router-dom'
 
 class Cart extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            cartItems: this.props.cartItems
+            cartItems: []
         }
     }
 
+    componentDidMount(){
+        this.setState({
+            cartItems: this.props.cartItems
+        })
+    }
 
+    handleDeleteItem = (index) => {
+        this.props.removeFromCart(index)
+        this.setState({cartItems: this.props.cartItems})
+        
+    }
     render() {
-        const { year, model, trim, email } = this.props
-        let mappedParts = this.state.cartItems.map(part => {
+        const { email } = this.props
+
+        let mappedParts = this.state.cartItems.map((part, index) => {
             return (
-                <div className='product-container'>
+
+                <div key={part.id} className='product-container'>
                     <div className='product-pic'>
                         <img className='product-img' src={part.picture} alt='' />
                     </div>
@@ -27,8 +41,8 @@ class Cart extends Component {
                         <li>- Part Number: {part.part_num}</li>
                         <li>- Quantity: <input className='quantity' /></li>
                         <div className='buttons'>
-                            <button className='btn-cart'>Purchase</button>
-                            <button className='btn-cart'>Remove </button>
+                            <Link to='/checkout'><button className='btn-cart'>Purchase</button></Link>
+                            <button className='btn-cart' onClick={() => this.handleDeleteItem(index)}>Remove </button>
                         </div>
                     </ul>
                 </div>
@@ -36,14 +50,22 @@ class Cart extends Component {
         })
 
 
+
+
+
+        console.log(this.props.cartItems)
+
         return (
             <div className='cart-parent'>
                 <h1>My Cart</h1>
                 <h4>{email}</h4>
-                <h4>{year} {model} {trim}</h4>
                 <div >
-                    <h5>Cart Items</h5>
-                    <div className='cart-items'>{mappedParts}</div>
+                    <div className='cart-items'>
+                        {mappedParts[0]
+                        ? mappedParts
+                        : <div>Your cart is empty</div>
+                        }
+                    </div>
                 </div>
                 <div className='cart-container'>
                     <ul>
@@ -57,13 +79,10 @@ class Cart extends Component {
 }
 
 const mapToProps = (reduxState) => {
-    const { year, model, trim, email, cartItems } = reduxState
+    const { email, cartItems } = reduxState
     return {
-        year,
-        model,
-        trim,
         email,
         cartItems
     }
 }
-export default connect(mapToProps)(Cart)
+export default connect(mapToProps, { removeFromCart })(Cart)

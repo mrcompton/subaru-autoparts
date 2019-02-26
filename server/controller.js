@@ -28,6 +28,27 @@ module.exports = {
         
     },
 
+    editPart: async (req,res) => {
+        const editId = parseInt(req.params.id)
+        console.log({editId})
+        console.log('req.body', req.body)
+        // const {part_num, category, name, description, price, picture} = req.body
+        // const dbInstance = req.app.get('db')
+        // let editPart = await dbInstance.editPart({part_num, category, name, description, price, picture, id: editId})
+        // console.log(editPart)
+        // res.status(200).send(editPart)
+       
+    },
+
+    deletePart: async (req,res) => {
+        const deleteId = parseInt(req.params.id)
+        console.log({deleteId})
+        const dbInstance = req.app.get('db')
+
+        let deletePart = await dbInstance.deletePart({id: deleteId})
+        res.sendStatus(200)
+    },
+
     register: async (req,res) => {
         let {email,password} = req.body
         let {session} = req

@@ -7,6 +7,7 @@ import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './ducks/store'
+// import store from './ducks/store'
 
 ReactDOM.render(
     <Provider store={store}>

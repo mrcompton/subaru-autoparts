@@ -20,7 +20,9 @@
     flex-direction: column;
 
 }
-
+.input-edit{
+    width: 500px;
+}
 .product-img{
     height: 250px;
     width: auto;
