@@ -9,15 +9,16 @@ class Cart extends Component {
         super(props)
 
         this.state = {
-            cartItems: []
+            // cartItems: []
         }
     }
 
-    componentDidMount(){
-        this.setState({
-            cartItems: this.props.cartItems
-        })
-    }
+    // componentDidMount(){
+    //     this.setState({
+    //         cartItems: this.props.cartItems
+    //     })
+    //     console.log("cart", this.state.cartItems)
+    // }
 
     handleDeleteItem = (index) => {
         this.props.removeFromCart(index)
@@ -26,10 +27,10 @@ class Cart extends Component {
     }
     render() {
         const { email } = this.props
-
-        let mappedParts = this.state.cartItems.map((part, index) => {
+        console.log(this.props.cartItems)
+        let mappedParts = this.props.cartItems.map((part, index) => {
+        console.log(part)
             return (
-
                 <div key={part.id} className='product-container'>
                     <div className='product-pic'>
                         <img className='product-img' src={part.picture} alt='' />
@@ -46,6 +47,7 @@ class Cart extends Component {
                         </div>
                     </ul>
                 </div>
+    
             )
         })
 
@@ -53,12 +55,16 @@ class Cart extends Component {
 
 
 
-        console.log(this.props.cartItems)
 
         return (
             <div className='cart-parent'>
                 <h1>My Cart</h1>
-                <h4>{email}</h4>
+                {email
+                ?
+                <h4>Account: {email}</h4>
+                :
+                null
+                }
                 <div >
                     <div className='cart-items'>
                         {mappedParts[0]
@@ -66,11 +72,6 @@ class Cart extends Component {
                         : <div>Your cart is empty</div>
                         }
                     </div>
-                </div>
-                <div className='cart-container'>
-                    <ul>
-                        <li></li>
-                    </ul>
                 </div>
             </div>
 

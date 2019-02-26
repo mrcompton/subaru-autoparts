@@ -29,11 +29,12 @@ class AdminModal extends React.Component {
         axios.post('/api/part',{ part_num, category, name, description, price, picture })
         .then(response => {
             console.log(response)
+            this.props.getPartsFn()
             this.props.onHide()
         })
     }
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <Modal
                 {...this.props}

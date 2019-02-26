@@ -42,12 +42,7 @@ class Home extends Component {
                 </div>
                 <h1>Featured Products</h1>
                 <div className='featured-products'>
-                    <div>
-                        <img className='products' src='https://images-na.ssl-images-amazon.com/images/I/71QpMH8TMnL._SY550_.jpg' alt='' />
-                        <div>
-                            <p>Oil Filters</p>
-                        </div>
-                    </div>
+        
                     <div>
                         <img className='products' src='https://www.buyautoparts.com/data/all_images/sr4132x-30-00627-front-map.jpg' alt='' />
                         <div>
@@ -66,12 +61,7 @@ class Home extends Component {
                             <p>Alternators</p>
                         </div>
                     </div> 
-                    <div>
-                        <img className='products' src='https://parts.gillmansubarunorth.com/images/parts/subaru/productimages/fullsize/22401AA781%201.jpg' alt='' />
-                        <div>
-                            <p>Spark Plugs</p>
-                        </div>
-                    </div>
+        
 
                 </div>
 

@@ -32,11 +32,11 @@ module.exports = {
         const editId = parseInt(req.params.id)
         console.log({editId})
         console.log('req.body', req.body)
-        // const {part_num, category, name, description, price, picture} = req.body
-        // const dbInstance = req.app.get('db')
-        // let editPart = await dbInstance.editPart({part_num, category, name, description, price, picture, id: editId})
-        // console.log(editPart)
-        // res.status(200).send(editPart)
+        const {part_num, name, description, price, picture} = req.body
+        const dbInstance = req.app.get('db')
+        let editPart = await dbInstance.editPart({part_num, name, description, price, picture, id: editId})
+        console.log(editPart)
+        res.sendStatus(200)
        
     },
 

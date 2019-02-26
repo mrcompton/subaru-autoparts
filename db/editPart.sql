@@ -1,7 +1,6 @@
 update parts
 set part_num = ${part_num},
- category = ${category},
- name = ${category},
+ name = ${name},
  description = ${description},
  price = ${price},
  picture = ${picture}
