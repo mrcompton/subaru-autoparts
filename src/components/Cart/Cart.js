@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './Cart.css'
 import { removeFromCart } from '../../ducks/reducer'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 
 class Cart extends Component {
@@ -23,16 +23,17 @@ class Cart extends Component {
 
     handleDeleteItem = (index) => {
         this.props.removeFromCart(index)
-        this.setState({cartItems: this.props.cartItems})
-        
+        this.setState({ cartItems: this.props.cartItems })
+
     }
     render() {
         const { email } = this.props
-        console.log(this.props.cartItems)
+        // console.log(this.props.cartItems)
         // this.props.cartItems.quantity = 1
         let mappedParts = this.props.cartItems.map((part, index) => {
-            return (      
-                    <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem}/>
+            return (
+
+                <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
 
             )
         })
@@ -46,20 +47,32 @@ class Cart extends Component {
             <div className='cart-parent'>
                 <h1>My Cart</h1>
                 {email
-                ?
-                <h4>Account: {email}</h4>
-                :
-                null
+                    ?
+                    <h4>Account: {email}</h4>
+                    :
+                    null
                 }
                 <div >
                     <div className='cart-items'>
                         {mappedParts[0]
-                        ? 
-                        <div>
-                            <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
-                            {mappedParts}
-                        </div>
-                        : <div>Your cart is empty</div>
+                            ?
+                            <div>
+                                <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
+                                <table className='test-table'>
+                                    <tbody>
+                                        <tr>
+                                            <th className='producto'>Product</th>
+                                            <th>Part Number</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                            <th></th>
+                                        </tr>
+                                        {mappedParts}
+                                    </tbody>
+                                </table>
+                            </div>
+                            : <div>Your cart is empty</div>
                         }
                     </div>
                 </div>

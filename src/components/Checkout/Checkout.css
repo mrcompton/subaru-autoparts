@@ -1,0 +1,55 @@
+.checkout{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.pay-form{
+    margin: 40px 300px 40px 100px;
+    
+}
+.btn-purchase{
+    cursor: pointer;
+    background-color: #5cb85c;
+    border: 1px solid  #5cb85c;
+    border-radius: 3px;
+    color: white;
+    height: 40px;
+    width: 400px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.order-summary{
+    border-bottom: 1px solid darkgrey;
+    padding: 10px;
+}
+
+.summary-container{
+    background-color: whitesmoke;
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    right: 0px;
+    padding: 20px;
+    margin-left: 50px
+}
+
+.name-price{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 10px;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 15px 30px ;
+}
+.sum-cont{
+    border-bottom: 1px solid darkgrey;
+    padding: 10px;
+}

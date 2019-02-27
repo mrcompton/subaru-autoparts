@@ -1,5 +1,5 @@
 .outer-container{
-    width: 100vw;
+    min-width: 100vw;
     height:75px;
     z-index: 100;
     background-color: rgb(255, 255, 255);
@@ -91,6 +91,7 @@ span{
 
     .outer-container{
        height: 50px;
+       position: fixed;
     }
     .logo-title{
 

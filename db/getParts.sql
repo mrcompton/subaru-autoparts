@@ -7,7 +7,9 @@ parts.name,
 parts.description,
 parts.price,
 parts.picture,
-parts.part_num
+parts.part_num,
+parts.quantity,
+parts.total
 from cars
 join subaru_key on cars.id = subaru_key.car_id
 join parts on subaru_key.part_id = parts.id

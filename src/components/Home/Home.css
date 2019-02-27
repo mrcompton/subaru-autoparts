@@ -1,7 +1,7 @@
 
 .home-body{
     height: 100%;
-    max-width: 100%;
+    min-width: 100%;
     background-image: url('https://secure-akns.subaru.com/content/media/mp_fullscreen_1920/19_OBK_photos_ext_05.jpg');
     background-position: center;
     background-size: cover;  
@@ -53,6 +53,7 @@ z-index: 2;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 .products{
     height: 300px;
@@ -134,11 +135,11 @@ z-index: 2;
         opacity: .85; */
     }
     .products{
-        height: 300px;
+        height: 250px;
         width: auto;
         background-color: whitesmoke;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        margin: 5px;
+        margin: 0px;
     }
     
 }

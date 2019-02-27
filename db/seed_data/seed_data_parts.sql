@@ -5,7 +5,9 @@ category text,
 name text,
 description text,
 price decimal,
-picture text
+picture text,
+quantity integer,
+total decimal
 );
 
 

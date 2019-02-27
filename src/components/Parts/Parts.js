@@ -28,7 +28,7 @@ class Parts extends Component {
         axios.post('/api/parts', { year, model, trim })
             .then(response => {
                 this.setState({ parts: response.data })
-                // console.log(response.data)
+                console.log("get items", response.data)
             })
 
     }
@@ -61,6 +61,7 @@ class Parts extends Component {
             return (
                 <EachPart
                     key={part.id}
+                    index = {index}
                     part={part}
                     handleGetParts= {this.handleGetAllParts}
                 />

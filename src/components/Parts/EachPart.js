@@ -41,8 +41,8 @@ class EachPart extends Component {
         })
     }
     handleAddToCart = (part) => {
-        this.props.updateQuant(1)
         this.props.addToCart(part)
+        this.props.updateQuant(part.id,1)
     }
     handleSaveChanges = (id, partObj) => {
         this.toggleEdit()
@@ -121,9 +121,9 @@ class EachPart extends Component {
 }
 
 const mapToProps = (reduxState) => {
-    const { year, model, trim, email } = reduxState
+    const { year, model, trim, email, cartItems } = reduxState
     return {
-        year, model, trim, email
+        year, model, trim, email, cartItems
     }
 }
 export default connect(mapToProps, { addToCart,updateQuant})(EachPart)

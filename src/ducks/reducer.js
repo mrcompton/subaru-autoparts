@@ -35,10 +35,10 @@ export function addToCart(product){
     }
 }
 
-export function updateQuant(quantity,index){
+export function updateQuant(partID, quantity){
     return{
         type: UPDATE_QUANT,
-        payload: {quantity, index}
+        payload: {partID, quantity}
     }
 }
 export function removeFromCart(productIndex){
@@ -59,9 +59,17 @@ export default function reducer(state=initialState, action){
             return Object.assign({}, state, {cartItems: [...state.cartItems, action.payload]});
         case UPDATE_QUANT:
             let updateArr = state.cartItems.slice()
-            const {quantity, index} = action.payload
-            console.log(updateArr[index])
-            return {...state}
+            const {partID, quantity} = action.payload
+            // console.log(partID,quantity,total)
+            // console.log({state})
+            updateArr.forEach((val) => {
+                if(val.id === partID){
+                    val.quantity = quantity
+                    val.total = val.quantity * val.price
+                    console.log({val})
+                }
+            })
+            return Object.assign({}, state, {cartItems: [...updateArr]})
         case REMOVE_FROM_CART:
             let newArr = state.cartItems.slice()
             newArr.splice(action.payload, 1)
