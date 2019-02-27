@@ -50,47 +50,12 @@ class Parts extends Component {
                 console.log(response.data)
             })
     }
-    // toggleEdit = () => {
-    //     this.setState({ editToggle: !this.state.editToggle })
-    //     console.log(this.state.editToggle)
-    // }
-
-    // handleChange = (prop, val) => {
-    //     this.setState({
-    //         [prop]: val
-    //     })
-    // }
-
-    // handleEditPart = (partObj) => {
-    //     this.toggleEdit()
-    //     console.log({ partObj })
-    //     const { part_num, category, name, description, price, picture, id } = partObj
-    //     axios.put(`/api/part/${id}`, { part_num, category, name, description, price, picture })
-    //         .then(response => {
-    //             this.handleGetAllParts()
-    //             console.log(response)
-    //         })
-    //         .catch(err => { console.log(err) })
-    // }
-
-    // handleDeletePart = (id) => {
-    //     axios.delete(`/api/part/${id}`)
-    //         .then(res => {
-    //             console.log(res)
-    //             this.handleGetAllParts()
-    //         })
-    //         .catch(err => { console.log(err) })
-
-    // }
+    
 
 
     render() {
         let modalClose = () => this.setState({ modalShow: false })
 
-        // console.log(this.props)
-
-        // let {part_num, category, name, description, price, picture} = this.state
-        // let statePartsObj = {part_num, category, name, description, price, picture}
 
         let mappedParts = this.state.parts.map((part, index) => {
             return (

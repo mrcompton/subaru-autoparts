@@ -29,8 +29,8 @@ class Cart extends Component {
     render() {
         const { email } = this.props
         console.log(this.props.cartItems)
+        // this.props.cartItems.quantity = 1
         let mappedParts = this.props.cartItems.map((part, index) => {
-        console.log(part)
             return (      
                     <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem}/>
 

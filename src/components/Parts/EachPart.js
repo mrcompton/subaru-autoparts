@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addToCart } from '../../ducks/reducer'
+import { addToCart, updateQuant} from '../../ducks/reducer'
 import './EachPart.css'
 import axios from 'axios'
 
@@ -15,10 +15,13 @@ class EachPart extends Component {
             description: '',
             price: 0,
             picture: '',
+            quanity: 0,
             editToggle: false
         }
     }
-
+    // componentDidMount(){
+    //     console.log(this.props.part)
+    // }
     toggleEdit = () => {
         this.setState({ editToggle: !this.state.editToggle })
         this.setState({
@@ -37,7 +40,10 @@ class EachPart extends Component {
             [prop]: val
         })
     }
-
+    handleAddToCart = (part) => {
+        this.props.updateQuant(1)
+        this.props.addToCart(part)
+    }
     handleSaveChanges = (id, partObj) => {
         this.toggleEdit()
         console.log({ partObj })
@@ -61,8 +67,6 @@ class EachPart extends Component {
     render() {
         let {part_num, name, description, price, picture} = this.state
         let statePartsObj = {part_num, name, description, price, picture}
-        this.props.part['quantity']= 1
-        console.log("props part", this.props.part)
         return (
             <div className='product-container'>
                 <div className='product-pic'>
@@ -104,9 +108,11 @@ class EachPart extends Component {
                                 <button className='btn edit-parts' onClick={() => this.toggleEdit()}>Edit Part</button>
                                 <button className='btn edit-parts' onClick={() => this.handleDeletePart(this.props.part.id)}>Remove Part</button>
                                 <button className='btn edit-parts attach'>Attach to Vehicle</button>
-                                <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button>
+                                <button className='btn-cart' onClick={() => this.handleAddToCart(this.props.part)}>Add To Cart</button>
+                                {/* <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button> */}
                             </div>
-                            : <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button>
+                            // : <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button>
+                            : <button className='btn-cart' onClick={() => this.handleAddToCart(this.props.part)}>Add To Cart</button>
                     }
                 </ul>
             </div>
@@ -120,4 +126,4 @@ const mapToProps = (reduxState) => {
         year, model, trim, email
     }
 }
-export default connect(mapToProps, { addToCart })(EachPart)
+export default connect(mapToProps, { addToCart,updateQuant})(EachPart)
