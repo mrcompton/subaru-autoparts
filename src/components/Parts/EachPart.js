@@ -61,6 +61,8 @@ class EachPart extends Component {
     render() {
         let {part_num, name, description, price, picture} = this.state
         let statePartsObj = {part_num, name, description, price, picture}
+        this.props.part['quantity']= 1
+        console.log("props part", this.props.part)
         return (
             <div className='product-container'>
                 <div className='product-pic'>

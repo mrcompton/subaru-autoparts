@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import './Cart.css'
 import { removeFromCart } from '../../ducks/reducer'
 import {Link} from 'react-router-dom'
+import CartItem from './CartItem'
 
 class Cart extends Component {
     constructor(props) {
@@ -30,24 +31,9 @@ class Cart extends Component {
         console.log(this.props.cartItems)
         let mappedParts = this.props.cartItems.map((part, index) => {
         console.log(part)
-            return (
-                <div key={part.id} className='product-container'>
-                    <div className='product-pic'>
-                        <img className='product-img' src={part.picture} alt='' />
-                    </div>
-                    <ul className='product-desc'>
-                        <li>- Product: {part.name}</li>
-                        <li>- Price: ${part.price}</li>
-                        <li>- Product Description: {part.description}</li>
-                        <li>- Part Number: {part.part_num}</li>
-                        <li>- Quantity: <input className='quantity' /></li>
-                        <div className='buttons'>
-                            <Link to='/checkout'><button className='btn-cart'>Purchase</button></Link>
-                            <button className='btn-cart' onClick={() => this.handleDeleteItem(index)}>Remove </button>
-                        </div>
-                    </ul>
-                </div>
-    
+            return (      
+                    <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem}/>
+
             )
         })
 
@@ -68,7 +54,11 @@ class Cart extends Component {
                 <div >
                     <div className='cart-items'>
                         {mappedParts[0]
-                        ? mappedParts
+                        ? 
+                        <div>
+                            <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
+                            {mappedParts}
+                        </div>
                         : <div>Your cart is empty</div>
                         }
                     </div>
