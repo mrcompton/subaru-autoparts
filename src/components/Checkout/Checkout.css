@@ -3,10 +3,15 @@
     height: 100%;
     width: 100%;
     display: flex;
+    /* padding: 20px; */
 }
 
+.Pay{
+    margin-bottom: 60px;
+}
 .pay-form{
-    margin: 40px 300px 40px 100px;
+    margin: 40px 40px 40px 40px;
+    width: 60%;
     
 }
 .btn-purchase{
@@ -52,4 +57,63 @@
 .sum-cont{
     border-bottom: 1px solid darkgrey;
     padding: 10px;
+}
+
+@media(min-width: 760px){
+    .grand-total{
+        display: none;
+    }
+}
+
+@media(max-width: 760px){
+    .summary-container{
+     display: none;
+    }
+    .pay-form{
+        width: 90%;
+        margin-top: 50px;
+    }
+    .checkout{
+        justify-content: center;
+    }
+    .grand-total{
+        position: absolute;
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        justify-items: center;
+        margin-top:10px;
+    }
+}
+@media(max-width: 425px){
+    .pay-form{
+        margin-top: 50px;
+        margin-bottom: 250px;
+    }
+}
+@media(max-width: 420px){
+    .pay-form{
+        margin-top: 170px;
+        margin-bottom: 250px;
+    }
+    .grand-total{
+        position: absolute;
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+
+        margin-top:130px;
+        margin-bottom: 40px;
+    }
+}
+
+@media(max-width: 325px){
+    .pay-form{
+
+        width: 80%
+    }
+    .btn-purchase{
+        width: 220px;
+    }
 }

@@ -45,6 +45,9 @@ class Checkout extends Component {
         })
         return (
             <div className='checkout'>
+                <div className='grand-total'>
+                    Order Total: ${grandTotal}
+                </div>
                 <div className='pay-form'>
                     <Form>
                         <Form.Row>
@@ -116,6 +119,7 @@ class Checkout extends Component {
                     </div>
 
                 </div>
+               
 
 
 

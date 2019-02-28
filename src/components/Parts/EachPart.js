@@ -107,11 +107,10 @@ class EachPart extends Component {
                             <div>
                                 <button className='btn edit-parts' onClick={() => this.toggleEdit()}>Edit Part</button>
                                 <button className='btn edit-parts' onClick={() => this.handleDeletePart(this.props.part.id)}>Remove Part</button>
-                                <button className='btn edit-parts attach'>Attach to Vehicle</button>
-                                <button className='btn-cart' onClick={() => this.handleAddToCart(this.props.part)}>Add To Cart</button>
-                                {/* <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button> */}
+                                {/* <button className='btn edit-parts attach'>Attach to Vehicle</button> */}
+                                <button className='btn-cart-inner' onClick={() => this.handleAddToCart(this.props.part)}>Add To Cart</button>
                             </div>
-                            // : <button className='btn-cart' onClick={() => this.props.addToCart(this.props.part)}>Add To Cart</button>
+                            
                             : <button className='btn-cart' onClick={() => this.handleAddToCart(this.props.part)}>Add To Cart</button>
                     }
                 </ul>
