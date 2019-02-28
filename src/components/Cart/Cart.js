@@ -35,6 +35,7 @@ class Cart extends Component {
 
                 <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
 
+
             )
         })
 
@@ -62,8 +63,8 @@ class Cart extends Component {
                                     <tbody>
                                         <tr>
                                             <th className='producto'>Product</th>
-                                            <th>Part Number</th>
-                                            <th>Price</th>
+                                            <th className='big-only'>Part Number</th>
+                                            <th className='big-only'>Price</th>
                                             <th>Quantity</th>
                                             <th>Total</th>
                                             <th></th>
@@ -71,6 +72,7 @@ class Cart extends Component {
                                         {mappedParts}
                                     </tbody>
                                 </table>
+                          
                             </div>
                             : <div>Your cart is empty</div>
                         }

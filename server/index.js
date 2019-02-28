@@ -15,6 +15,8 @@ app.use(cors())
 
 app.use(require("body-parser").text());
 
+app.use( express.static( `${__dirname}/../build` ) )
+
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,

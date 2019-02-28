@@ -25,12 +25,14 @@ class CartItem extends Component {
 
         let total = price * quantity
 
+
+
         return (
 
             <tr>
                 <td className='producto'>{name}</td>
-                <td>{part_num}</td>
-                <td>${parseFloat(price).toFixed(2)}</td>
+                <td className='big-only'>{part_num}</td>
+                <td className='big-only'>${parseFloat(price).toFixed(2)}</td>
                 <td><input className='in-quantity' onChange={(e) => this.handleChangeQuantity(id, e.target.value)} value={quantity} /></td>
                 <td>${parseFloat(total).toFixed(2)}</td>
                 <td><button className='x-btn' onClick={() => this.props.handleDeleteItem(this.props.index)}><i className="fa fa-trash" aria-hidden="true"></i></button></td>
