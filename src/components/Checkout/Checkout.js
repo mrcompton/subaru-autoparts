@@ -11,10 +11,26 @@ class Checkout extends Component {
         super(props)
 
         this.state={
-            
+            email: '',
+            firstName: '',
+            lastName: '',
+            address1: '',
+            address2:'',
+            city: '',
+            state: '',
+            zip: 0
         }
     }
+
+    handleChange = (prop,val) => {
+        this.setState({
+            [prop]: val
+        })
+        console.log("state", this.state)
+    }
+
     render() {
+        console.log("state2", this.state)
         let grandTotal = 0
 
         let mappedCartItems = this.props.cartItems.map(item => {
@@ -34,7 +50,7 @@ class Checkout extends Component {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Email Address</Form.Label>
-                                <Form.Control placeholder="Email@email.com" />
+                                <Form.Control placeholder="Email@email.com" onChange={(e)=>this.handleChange('email',e.target.value)} value={this.state.email}/>
                             </Form.Group>
 
                         </Form.Row>
@@ -42,39 +58,39 @@ class Checkout extends Component {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>First Name</Form.Label>
-                                <Form.Control placeholder="First Name" />
+                                <Form.Control placeholder="First Name" onChange={(e)=>this.handleChange('firstName',e.target.value)} value={this.state.firstName}/>
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
                                 <Form.Label>Last Name</Form.Label>
-                                <Form.Control placeholder="Last Name" />
+                                <Form.Control placeholder="Last Name" onChange={(e)=>this.handleChange('lastName',e.target.value)} value={this.state.lastName}/>
                             </Form.Group>
                         </Form.Row>
 
                         <Form.Group controlId="formGridAddress1">
                             <Form.Label>Address</Form.Label>
-                            <Form.Control placeholder="1234 Main St" />
+                            <Form.Control placeholder="1234 Main St" onChange={(e)=>this.handleChange('address1',e.target.value)} value={this.state.address1}/>
                         </Form.Group>
 
                         <Form.Group controlId="formGridAddress2">
                             <Form.Label>Address 2</Form.Label>
-                            <Form.Control placeholder="Apartment, studio, or floor" />
+                            <Form.Control placeholder="Apartment, studio, or floor" onChange={(e)=>this.handleChange('address2',e.target.value)} value={this.state.address2}/>
                         </Form.Group>
 
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridCity">
                                 <Form.Label>City</Form.Label>
-                                <Form.Control />
+                                <Form.Control onChange={(e)=>this.handleChange('city',e.target.value)} value={this.state.city}/>
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridState">
                                 <Form.Label>State</Form.Label>
-                                <Form.Control />
+                                <Form.Control onChange={(e)=>this.handleChange('state',e.target.value)} value={this.state.state}/>
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridZip">
                                 <Form.Label>Zip</Form.Label>
-                                <Form.Control />
+                                <Form.Control onChange={(e)=>this.handleChange('zip',e.target.value)} value={this.state.zip}/>
                             </Form.Group>
                         </Form.Row>
 
@@ -83,7 +99,7 @@ class Checkout extends Component {
                         </Form.Group> */}
 
                         <button className='btn-purchase' label='Submit'>
-                            Submit shipping information
+                            Save shipping information
                         </button>
                         <Pay grandTotal={grandTotal} />
                     </Form>

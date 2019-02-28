@@ -14,8 +14,24 @@ class AdminModal extends React.Component {
             name: '',
             description: '',
             price: 0,
-            picture: ''
+            picture: '',
+            dadJoke: '',
+            chewName: ''
         }
+    }
+    componentDidMount() {
+        axios.get('https://icanhazdadjoke.com/', {
+            headers: {
+                Accept: 'text/plain'
+            }
+        })
+            .then((response) => {
+                this.setState({ dadJoke: response.data })
+            })
+        axios.get('https://swapi.co/api/people/13/')
+            .then((response) => {
+                this.setState({ chewName: response.data.name })
+            })
     }
 
     handleChange = (prop, val) => {
@@ -26,12 +42,12 @@ class AdminModal extends React.Component {
 
     handleAddPart = () => {
         const { part_num, category, name, description, price, picture } = this.state
-        axios.post('/api/part',{ part_num, category, name, description, price, picture })
-        .then(response => {
-            console.log(response)
-            this.props.getPartsFn()
-            this.props.onHide()
-        })
+        axios.post('/api/part', { part_num, category, name, description, price, picture })
+            .then(response => {
+                console.log(response)
+                this.props.getPartsFn()
+                this.props.onHide()
+            })
     }
     render() {
         // console.log(this.state)
@@ -51,18 +67,19 @@ class AdminModal extends React.Component {
                     <div>
                         <div className='grid'>
                             <div className='grid-title'>Part Number:</div>
-                            <input onChange={(e) => this.handleChange('part_num', e.target.value)} value={this.state.part_num}/>
+                            <input onChange={(e) => this.handleChange('part_num', e.target.value)} value={this.state.part_num} />
                             <div className='grid-title'>Category:</div>
-                            <input onChange={(e) => this.handleChange('category', e.target.value)} value={this.state.category}/>
+                            <input onChange={(e) => this.handleChange('category', e.target.value)} value={this.state.category} />
                             <div className='grid-title'>Name:</div>
-                            <input onChange={(e) => this.handleChange('name', e.target.value)} value={this.state.name}/>
+                            <input onChange={(e) => this.handleChange('name', e.target.value)} value={this.state.name} />
                             <div className='grid-title'>Description:</div>
-                            <input onChange={(e) => this.handleChange('description', e.target.value)} value={this.state.description}/>
+                            <input onChange={(e) => this.handleChange('description', e.target.value)} value={this.state.description} />
                             <div className='grid-title'>Price:</div>
-                            <input onChange={(e) => this.handleChange('price', e.target.value)} value={this.state.price} type='number'/>
+                            <input onChange={(e) => this.handleChange('price', e.target.value)} value={this.state.price} type='number' />
                             <div className='grid-title'>Picture:</div>
-                            <input onChange={(e) => this.handleChange('picture', e.target.value)} value={this.state.picture}/>
+                            <input onChange={(e) => this.handleChange('picture', e.target.value)} value={this.state.picture} />
                         </div>
+                        <p id="joke">{this.state.chewName}'s joke of the day - {this.state.dadJoke}</p>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

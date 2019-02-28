@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Pay.css';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+require('dotenv').config()
 
 class Pay extends Component {
   onToken = (token) => {
@@ -22,7 +23,7 @@ class Pay extends Component {
   
         <StripeCheckout
           token={this.onToken}
-          stripeKey={`pk_test_AcQpaVk75G9MRYA86NVrxpG5`}
+          stripeKey={`public key`}
           amount={this.props.grandTotal*100}
         />
 

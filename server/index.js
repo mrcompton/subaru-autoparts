@@ -5,16 +5,15 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const ctrl = require('./controller')
 const cors = require('cors')
-const stripe = require("stripe")("sk_test_MXT09ZruwSQGyK7MTi25CQKS")
+const stripe = require("stripe")('secret key')
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, STRIPE_SECRET_KEY} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
 app.use(require("body-parser").text());
-
 
 app.use(session({
     secret: SESSION_SECRET,
