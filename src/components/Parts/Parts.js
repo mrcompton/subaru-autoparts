@@ -69,7 +69,7 @@ class Parts extends Component {
             )
         })
         return (
-            <div>
+            <div className='part-container'>
                 {this.props.email === 'admin@admin.com'
                     ?
                     <div>

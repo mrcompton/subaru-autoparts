@@ -157,4 +157,7 @@ li{
         height: auto;
         margin: 1px;
     }
+    .part-container{
+        padding-top: 140px
+    }
 }

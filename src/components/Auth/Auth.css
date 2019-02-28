@@ -80,3 +80,9 @@ input{
     width: 170px;
   }
 }
+
+@media(max-width:400px){
+ .header1{
+   margin-top: 100px;
+ }
+}

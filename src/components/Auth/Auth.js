@@ -50,7 +50,7 @@ class Auth extends Component {
     render() {
         return (
             <div className='auth-body'>
-                <h2>Login / Register</h2>
+                <h2 className='header1'>Login / Register</h2>
                
                 <div className='form-container'>
                     <div className='form'>
