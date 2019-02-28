@@ -3,21 +3,28 @@ import { connect } from 'react-redux'
 import './Checkout.css'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
+import Pay from './Pay'
+
 
 class Checkout extends Component {
+    constructor(props){
+        super(props)
+
+        this.state={
+            
+        }
+    }
     render() {
         let grandTotal = 0
 
         let mappedCartItems = this.props.cartItems.map(item => {
             grandTotal += item.total
             return (
-
-                <div >
-                    <div className='name-price'>
-                        <div>{item.name} ({item.quantity})</div>
-                        <div>${parseFloat(item.total).toFixed(2)}</div>
-                    </div>
+                <div key={item.id} className='name-price'>
+                    <div>{item.name} ({item.quantity})</div>
+                    <div>${parseFloat(item.total).toFixed(2)}</div>
                 </div>
+
             )
         })
         return (
@@ -62,44 +69,7 @@ class Checkout extends Component {
 
                             <Form.Group as={Col} controlId="formGridState">
                                 <Form.Label>State</Form.Label>
-                                    <Form.Control />
-                                {/* <Form.Control as="select">
-                                    <option>Choose...</option>
-                                    <option>AL</option>
-                                    <option>AK</option>
-                                    <option>AZ</option>
-                                    <option>AR</option>
-                                    <option>CA</option>
-                                    <option>CO</option>
-                                    <option>CT</option>
-                                    <option>DE</option>
-                                    <option>FL</option>
-                                    <option>GA</option>
-                                    <option>HI</option>
-                                    <option>ID</option>
-                                    <option>IL</option>
-                                    <option>IN</option>
-                                    <option>IA</option>
-                                    <option>KS</option>
-                                    <option>KY</option>
-                                    <option>LA</option>
-                                    <option>ME</option>
-                                    <option>MD</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                    <option>MA</option>
-                                </Form.Control> */}
+                                <Form.Control />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridZip">
@@ -112,10 +82,13 @@ class Checkout extends Component {
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group> */}
 
-                        <button className='btn-purchase'>
-                            Submit and pay
+                        <button className='btn-purchase' label='Submit'>
+                            Submit shipping information
                         </button>
+                        <Pay grandTotal={grandTotal} />
                     </Form>
+
+
                 </div>
 
                 <div className='summary-container'>
@@ -125,7 +98,10 @@ class Checkout extends Component {
                         <div>TOTAL: </div>
                         <div>${grandTotal}</div>
                     </div>
+
                 </div>
+
+
 
             </div>
         )
