@@ -105,19 +105,39 @@ module.exports = {
         res.sendStatus(200)
     },
 
-    // addToCart: async (req,res) => {
-    //     let {part_num, email, quantity, total} = req.body
-    //     const dbInstance = req.app.get('db')
-
-    //     let cartItem = await dbInstance.addToCart({part_num: part_num, email: email, quantity: quantity, total: total})
-    //     res.sendStatus(200)
-    // },
-
-    // editCart: (req,res) => {
-
-    // },
-
-    // removeFromCart: (req,res) => {
-
-    // }
+    stripe: (req,res) => {
+        const amountArray = req.body.amount.toString().split('');
+        const pennies = [];
+        for (var i = 0; i < amountArray.length; i++) {
+          if(amountArray[i] === ".") {
+            if (typeof amountArray[i + 1] === "string") {
+              pennies.push(amountArray[i + 1]);
+            } else {
+              pennies.push("0");
+            }
+            if (typeof amountArray[i + 2] === "string") {
+              pennies.push(amountArray[i + 2]);
+            } else {
+              pennies.push("0");
+            }
+              break;
+          } else {
+              pennies.push(amountArray[i])
+          }
+        }
+        const convertedAmt = parseInt(pennies.join(''));
+      
+        const charge = stripe.charges.create({
+        amount: convertedAmt, // amount in cents, again
+        currency: 'usd',
+        source: req.body.token.id,
+        description: 'Test charge from react app'
+      }, function(err, charge) {
+          if (err) return res.sendStatus(500)
+          return res.sendStatus(200);
+        // if (err && err.type === 'StripeCardError') {
+        //   // The card has been declined
+        // }
+      });
+    }
 }

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import './Pay.css';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-require('dotenv').config()
 
 class Pay extends Component {
   onToken = (token) => {
     token.card = void 0;
     console.log('token', token);
     axios.post(`${process.env.STRIPE_API}`, { token, amount: 100 } ).then(response => {
+      console.log({response})
       alert('we are in business')
     });
   }
@@ -23,7 +22,7 @@ class Pay extends Component {
   
         <StripeCheckout
           token={this.onToken}
-          stripeKey={`public key`}
+          stripeKey={'pk_test_AcQpaVk75G9MRYA86NVrxpG5'}
           amount={this.props.grandTotal*100}
         />
 
