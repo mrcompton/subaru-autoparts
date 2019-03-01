@@ -1,0 +1,2 @@
+insert into orders(email, first_name, last_name, address_1, address_2, city, state, zip, total)
+values(${email}, ${first_name}, ${last_name}, ${address_1}, ${address_2}, ${city}, ${state}, ${zip}, ${total});

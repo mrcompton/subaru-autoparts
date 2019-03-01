@@ -105,6 +105,18 @@ module.exports = {
         res.sendStatus(200)
     },
 
+    postOrder: async (req,res) => {
+      const {email, first_name, last_name, address_1, address_2, city, state, zip, total} = req.body
+      dbInstance = req.app.get('db')
+
+      let order = await dbInstance.post_order({email, first_name, last_name, address_1, address_2, city, state, zip, total})
+      res.status(200).send(order)
+    },
+    
+    postPartsOrdered: (req, res) => {
+
+    },
+
     stripe: (req,res) => {
         const amountArray = req.body.amount.toString().split('');
         const pennies = [];

@@ -4,6 +4,8 @@ import './Checkout.css'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Pay from './Pay'
+import axios from 'axios'
+import {emptyCart} from './../../ducks/reducer'
 
 
 class Checkout extends Component {
@@ -18,7 +20,9 @@ class Checkout extends Component {
             address2:'',
             city: '',
             state: '',
-            zip: 0
+            zip: 0,
+            grandTotal: 0,
+            completed: ''
         }
     }
 
@@ -29,12 +33,24 @@ class Checkout extends Component {
         console.log("state", this.state)
     }
 
+    handlePostOrder = (grandTotal) => {
+        this.handleChange('completed', true)
+        console.log('fires')
+        const {email, firstName, lastName, address1, address2, city, state, zip} = this.state
+        axios.post('/api/order',{email, first_name:firstName, last_name:lastName, address_1: address1, address_2:address2, city, state, zip, total:grandTotal})
+        .then(order => {
+            console.log({order})
+        })
+    }
+
+  
+    
     render() {
         console.log("state2", this.state)
-        let grandTotal = 0
-
+        let {grandTotal} = this.state
         let mappedCartItems = this.props.cartItems.map(item => {
             grandTotal += item.total
+        
             return (
                 <div key={item.id} className='name-price'>
                     <div>{item.name} ({item.quantity})</div>
@@ -100,11 +116,14 @@ class Checkout extends Component {
                         {/* <Form.Group id="formGridCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group> */}
-
-                        <button className='btn-purchase' label='Submit'>
+                        {
+                            !this.state.completed
+                            ?<button className='btn-purchase' label='Submit' onClick={()=>this.handlePostOrder(grandTotal)}>
                             Save shipping information
-                        </button>
-                        <Pay grandTotal={grandTotal} />
+                            </button>
+                            :<Pay grandTotal={grandTotal}/>
+                        }
+                        
                     </Form>
 
 
@@ -115,7 +134,7 @@ class Checkout extends Component {
                     <div className='sum-cont'>{mappedCartItems}</div>
                     <div className='total'>
                         <div>TOTAL: </div>
-                        <div>${grandTotal}</div>
+                        <div>${parseFloat(grandTotal).toFixed(2)}</div>
                     </div>
 
                 </div>
@@ -135,4 +154,4 @@ const mapToProps = (reduxState) => {
         cartItems
     }
 }
-export default connect(mapToProps)(Checkout)
+export default connect(mapToProps, {emptyCart})(Checkout)

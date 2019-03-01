@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
 class Pay extends Component {
+
   onToken = (token) => {
     token.card = void 0;
     console.log('token', token);

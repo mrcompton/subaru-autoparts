@@ -12,6 +12,7 @@ const UPDATE_USER = 'UPDATE_USER'
 const ADD_TO_CART = 'ADD_TO_CART'
 const UPDATE_QUANT = 'UPDATE_QUANT'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+const EMPTY_CART = 'EMPTY_CART'
 
 export function updateVehicle(vehicleObj){
     return{
@@ -47,6 +48,13 @@ export function removeFromCart(productIndex){
         payload: productIndex
     }
 }
+
+export function emptyCart(emptyArr){
+    return{
+        type: EMPTY_CART,
+        payload: emptyArr
+    }
+}
 export default function reducer(state=initialState, action){
     switch(action.type){
         case UPDATE_VEHICLE:
@@ -60,8 +68,6 @@ export default function reducer(state=initialState, action){
         case UPDATE_QUANT:
             let updateArr = state.cartItems.slice()
             const {partID, quantity} = action.payload
-            // console.log(partID,quantity,total)
-            // console.log({state})
             updateArr.forEach((val) => {
                 if(val.id === partID){
                     val.quantity = quantity
@@ -74,6 +80,9 @@ export default function reducer(state=initialState, action){
             let newArr = state.cartItems.slice()
             newArr.splice(action.payload, 1)
             return Object.assign({},state, {cartItems: newArr})
+        case EMPTY_CART:
+            let {emptyArr} = action.payload
+            return Object.assign({}, state, {cartItems: emptyArr})
         default:
             return state;
     }

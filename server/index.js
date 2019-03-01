@@ -43,6 +43,10 @@ app.post('/api/register',ctrl.register)
 app.post('/api/login',ctrl.login)
 app.get('/api/logout', ctrl.logout)
 
+//post order to database
+app.post('/api/order',ctrl.postOrder)
+
+
 //stripe functionality
 app.post('/api/payment', ctrl.stripe)
 
