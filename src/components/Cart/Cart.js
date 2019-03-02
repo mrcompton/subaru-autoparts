@@ -31,18 +31,13 @@ class Cart extends Component {
         // console.log(this.props.cartItems)
         // this.props.cartItems.quantity = 1
         let mappedParts = this.props.cartItems.map((part, index) => {
-            return (
+                return (
 
-                <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
-
-
-            )
-        })
+                    <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
 
 
-
-
-
+                )
+            })
 
         return (
             <div className='cart-parent'>
@@ -54,29 +49,29 @@ class Cart extends Component {
                     null
                 }
                 <div >
-                    <div className='cart-items'>
-                        {mappedParts[0]
-                            ?
-                            <div>
-                                <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
-                                <table className='test-table'>
-                                    <tbody>
-                                        <tr>
-                                            <th className='producto'>Product</th>
-                                            <th className='big-only'>Part Number</th>
-                                            <th className='big-only'>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Total</th>
-                                            <th></th>
-                                        </tr>
-                                        {mappedParts}
-                                    </tbody>
-                                </table>
-                          
-                            </div>
-                            : <div>Your cart is empty</div>
-                        }
-                    </div>
+
+                    {this.props.cartItems[0]
+                        ? <div className='cart-items'>
+                            <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
+                            <table className='test-table'>
+                                <tbody>
+                                    <tr>
+                                        <th className='producto'>Product</th>
+                                        <th className='big-only'>Part Number</th>
+                                        <th className='big-only'>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                    {mappedParts}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        : <div>Your cart is empty</div>
+                        
+                    }
+
                 </div>
             </div>
 

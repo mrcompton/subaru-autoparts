@@ -149,7 +149,7 @@ class Checkout extends Component {
                             ?<button className='btn-purchase' label='Submit' onClick={()=>this.handlePostOrder(grandTotal)}>
                             Save shipping information
                             </button>
-                            :<Pay grandTotal={grandTotal}/>
+                            :<Pay grandTotal={grandTotal} emptyCart={this.props.emptyCart}/>
                         }
                         
                     </Form>
@@ -171,14 +171,7 @@ class Checkout extends Component {
                     </div>
 
                 </div>
-                {/* <div>
-
-                    <Link><button onClick={()=> this.props.emptyCart([])}></button></Link>
-                </div> */}
-
-
-
-
+               
             </div>
         )
     }
