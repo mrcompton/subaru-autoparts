@@ -28,10 +28,6 @@ class AdminModal extends React.Component {
             .then((response) => {
                 this.setState({ dadJoke: response.data })
             })
-        axios.get('https://swapi.co/api/people/13/')
-            .then((response) => {
-                this.setState({ chewName: response.data.name })
-            })
     }
 
     handleChange = (prop, val) => {
@@ -79,7 +75,7 @@ class AdminModal extends React.Component {
                             <div className='grid-title'>Picture:</div>
                             <input onChange={(e) => this.handleChange('picture', e.target.value)} value={this.state.picture} />
                         </div>
-                        <p id="joke">{this.state.chewName}'s joke of the day - {this.state.dadJoke}</p>
+                        <p id="joke">Joke of the day - {this.state.dadJoke}</p>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

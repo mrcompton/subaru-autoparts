@@ -9,7 +9,9 @@
 .Pay{
     background: none;
     box-shadow: none;
-    margin-bottom: 60px;
+    margin-bottom: 60px; 
+  
+    margin-left: 0;
 }
 .pay-form{
     margin: 40px 40px 40px 40px;
@@ -23,11 +25,14 @@
     border-radius: 3px;
     color: white;
     height: 40px;
-    width: 250px;
+    width: 260px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 5px;
     margin: 20px;
+}
+.btn-purchase:hover{
+    color: black;
 }
 .order-summary{
     border-bottom: 1px solid darkgrey;
@@ -116,6 +121,6 @@
         width: 80%
     }
     .btn-purchase{
-        width: 220px;
+        width: 225px;
     }
 }

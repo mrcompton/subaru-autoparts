@@ -54,7 +54,7 @@ li{
 
 
 
-.btn-save{
+/* .btn-save{
     cursor: pointer;
     background-color: black;
     border-color: tomato;
@@ -66,7 +66,7 @@ li{
     border-radius: 5px;
     margin-right: 30px;
     
-}
+} */
 
 .btn-switch{
     cursor: pointer;
@@ -82,6 +82,10 @@ li{
     
 }
 
+.btn-switch:hover{
+    background-color: rgb(44, 44, 44);
+}
+
 .add-parts{
     cursor: pointer;
     background-color: tomato;
@@ -93,6 +97,10 @@ li{
     font-size: 16px;
     border-radius: 5px;
     margin: 15px;
+}
+
+.add-parts:hover{
+    background-color: rgb(207, 82, 60);
 }
 
 .edit-parts{
@@ -107,7 +115,10 @@ li{
     border-radius: 5px;
     margin: 15px;
 }
-
+.edit-parts:hover{
+    background-color: rgb(207, 82, 60);
+    color: white;
+}
 
 .btn-cart-inner{
     cursor: pointer;
@@ -121,13 +132,15 @@ li{
     font-size: 16px;
     border-radius: 5px;
     margin: 15px;
-    
+}
+.btn-cart-inner:hover{
+    background-color:#2b558b; 
 }
 
-.btn-save{
+.btn-save-edit{
     cursor: pointer;
     background-color: black;
-    border-color: tomato;
+    border-color: black;
     color: white;
     height: 40px;
     width: 140px;
@@ -137,7 +150,9 @@ li{
     margin: 15px;
     
 }
-
+.btn-save-edit:hover{
+    background-color: rgb(44, 44, 44);
+}
 .attach{
     width: 160px;
 }
@@ -171,7 +186,7 @@ li{
         width: auto;
     }
 
-    .btn-save{
+    .btn-save-edit{
         margin-bottom: 10px;
     }
 }

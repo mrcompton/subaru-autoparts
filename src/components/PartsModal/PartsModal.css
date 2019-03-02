@@ -10,7 +10,26 @@
     border-radius: 5px;
 }
 
+.btn-close:hover{
+    background-color:#2b558b; 
+}
 
+.btn-save{
+    cursor: pointer;
+    background-color: #386db3;
+    border: #428bca;
+    color: white;
+    height: 40px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.btn-save:hover{
+
+    background-color:#2b558b; 
+
+}
 .selected-container{
 
     display: flex;

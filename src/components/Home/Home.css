@@ -47,6 +47,10 @@ z-index: 2;
     border-radius: 5px;
     margin: 30px;
 }
+.dropdown:hover{
+    background-color: rgb(44, 44, 44);
+}
+
 .featured-products{
     display: flex;
     flex-direction: row;
@@ -62,7 +66,9 @@ z-index: 2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 50px;
 }
-
+.cool-pic{
+    margin-top: 0px;
+}
 @media (max-width:1240px){
     .dropdown{
         cursor: pointer;
@@ -77,7 +83,11 @@ z-index: 2;
         margin: 30px;
     }
 }
-
+@media (max-width:950px){
+    .cool-pic{
+        display: none;
+    }
+}
 @media (max-width:900px){
     .dropdown{
         cursor: pointer;

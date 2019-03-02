@@ -84,8 +84,8 @@ class EachPart extends Component {
                         :
                         <div>
                             <li>
-                                <button className='btn-save' onClick={() => this.handleSaveChanges(this.props.part.id,statePartsObj)}>Save Changes</button>
-                                <button className='btn-save' onClick={() => this.toggleEdit()}>Cancel</button>
+                                <button className='btn-save-edit' onClick={() => this.handleSaveChanges(this.props.part.id,statePartsObj)}>Save Changes</button>
+                                <button className='btn-save-edit' onClick={() => this.toggleEdit()}>Cancel</button>
                             </li>
                             <li>- Picture URL: </li>
                             <input className='input-edit' onChange={(e) => this.handleChange('picture', e.target.value)} value={this.state.picture} />

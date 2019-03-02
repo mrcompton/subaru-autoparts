@@ -113,43 +113,22 @@ module.exports = {
       res.status(200).send(order)
     },
     
-    postPartsOrdered: (req, res) => {
-
+    getOrderNum: (req,res) => {
+        dbInstance = req.app.get('db')
+        dbInstance.getOrderNum()
+        .then(num => {
+            res.status(200).send(num)
+        })
     },
 
-    stripe: (req,res) => {
-        const amountArray = req.body.amount.toString().split('');
-        const pennies = [];
-        for (var i = 0; i < amountArray.length; i++) {
-          if(amountArray[i] === ".") {
-            if (typeof amountArray[i + 1] === "string") {
-              pennies.push(amountArray[i + 1]);
-            } else {
-              pennies.push("0");
-            }
-            if (typeof amountArray[i + 2] === "string") {
-              pennies.push(amountArray[i + 2]);
-            } else {
-              pennies.push("0");
-            }
-              break;
-          } else {
-              pennies.push(amountArray[i])
-          }
-        }
-        const convertedAmt = parseInt(pennies.join(''));
-      
-        const charge = stripe.charges.create({
-        amount: convertedAmt, // amount in cents, again
-        currency: 'usd',
-        source: req.body.token.id,
-        description: 'Test charge from react app'
-      }, function(err, charge) {
-          if (err) return res.sendStatus(500)
-          return res.sendStatus(200);
-        // if (err && err.type === 'StripeCardError') {
-        //   // The card has been declined
-        // }
-      });
+    postOrderedParts: async (req,res) => {
+        dbInstance = req.app.get('db')
+        console.log("req.body1", req.body[0])
+        console.log("req.body2", req.body[1])
+        console.log("req.body3", req.body[2])
+        await dbInstance.post_parts_ordered([req.body[0],req.body[1], req.body[2]])
+        res.sendStatus(200)
     }
+
+    
 }

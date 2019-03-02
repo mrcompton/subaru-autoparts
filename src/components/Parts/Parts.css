@@ -5,16 +5,12 @@
     margin-bottom: 100px;
 }
 
-.product-container{
-    background-color: rgb(223, 219, 219);
-    width: 55%;
-    height: auto;
-    margin: 20px;
-    display: flex;
-    padding: 30px;
+/* .part-container{
+    background-color: white;
+    background-image: url('https://content.autotrader.com/content/dam/autotrader/articles/Cars/Subaru/Crosstrek/2019/2019_SubaruCrosstrek_NCR/2019%20Subaru%20Crosstrek%20(5).jpg');
+    background-repeat: none
 
-
-}
+} */
 
 .product-desc{
     display: flex;

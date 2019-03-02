@@ -22,7 +22,8 @@ class Checkout extends Component {
             state: '',
             zip: 0,
             grandTotal: 0,
-            completed: ''
+            completed: '',
+            orderNum: 0
         }
     }
 
@@ -40,10 +41,37 @@ class Checkout extends Component {
         axios.post('/api/order',{email, first_name:firstName, last_name:lastName, address_1: address1, address_2:address2, city, state, zip, total:grandTotal})
         .then(order => {
             console.log({order})
+            this.handleGetOrderNum()
         })
     }
 
-  
+    handleGetOrderNum = () => {
+        axios.get('/api/ordernum')
+        .then(res => {
+            this.setState({orderNum:res.data[0].max})
+            console.log("orderNum", this.state.orderNum)
+            this.handlePostOrderedParts(this.state.orderNum)
+        })
+    }
+
+    handlePostOrderedParts = (num) => {
+        this.props.cartItems.forEach((val) => {
+            let id = val.id
+            let quantity = val.quantity
+            let reqArr = []
+            reqArr.push(num)
+            reqArr.push(id)
+            reqArr.push(quantity)
+            axios.post('/api/orderedparts', reqArr)
+            .then(res => {
+                console.log(res.data)
+
+
+            })
+        })
+        
+    }
+    
     
     render() {
         console.log("state2", this.state)
@@ -62,7 +90,7 @@ class Checkout extends Component {
         return (
             <div className='checkout'>
                 <div className='grand-total'>
-                    Order Total: ${grandTotal}
+                    Order Total: ${parseFloat(grandTotal).toFixed(2)}
                 </div>
                 <div className='pay-form'>
                     <Form>
@@ -131,14 +159,23 @@ class Checkout extends Component {
 
                 <div className='summary-container'>
                     <h5 className='order-summary'>Order Summary</h5>
-                    <div className='sum-cont'>{mappedCartItems}</div>
+                    {
+                        this.props.cartItems
+                        ?<div className='sum-cont'>{mappedCartItems}</div>
+                        :null
+                    }
+                    
                     <div className='total'>
                         <div>TOTAL: </div>
                         <div>${parseFloat(grandTotal).toFixed(2)}</div>
                     </div>
 
                 </div>
-               
+                {/* <div>
+
+                    <Link><button onClick={()=> this.props.emptyCart([])}></button></Link>
+                </div> */}
+
 
 
 

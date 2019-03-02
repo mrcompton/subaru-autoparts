@@ -67,11 +67,14 @@ span{
     border-radius: 5px;
     margin-left: 10px;
 }
+.btn-cart:hover{
+    background-color:#2b558b;
+}
 
 .btn-account{
     cursor: pointer;
     background-color: #505050;
-    border: #428bca;
+    border: #505050;
     color: white;
     height: 40px;
     width: 120px;
@@ -79,6 +82,9 @@ span{
     font-size: 16px;
     border-radius: 5px;
     margin-left: 10px;
+}
+.btn-account:hover{
+    background-color: rgb(44, 44, 44);
 }
 
 @media(max-width:760px){
