@@ -19,11 +19,15 @@ class Parts extends Component {
             price: 0,
             picture: '',
             editToggle: false,
-            modalShow: false
+            modalShow: false,
+            reset: ''
         }
     }
 
     componentDidMount() {
+        this.setState({
+            reset: 'yes'
+        })
         const { year, model, trim } = this.props
         axios.post('/api/parts', { year, model, trim })
             .then(response => {

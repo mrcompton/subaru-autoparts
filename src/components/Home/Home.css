@@ -154,7 +154,7 @@ z-index: 2;
     
 }
 
-@media(max-width:375px){
+@media(max-width:420px){
     .vehicle-picker{
         height: 520px;
         width: 80vw;

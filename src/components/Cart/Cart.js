@@ -10,16 +10,15 @@ class Cart extends Component {
         super(props)
 
         this.state = {
-            // cartItems: []
+            reset: ''
         }
     }
+    componentDidMount(){
+        this.setState({
+            reset: 'yes'
+        })
+    }
 
-    // componentDidMount(){
-    //     this.setState({
-    //         cartItems: this.props.cartItems
-    //     })
-    //     console.log("cart", this.state.cartItems)
-    // }
 
     handleDeleteItem = (index) => {
         this.props.removeFromCart(index)
@@ -28,8 +27,7 @@ class Cart extends Component {
     }
     render() {
         const { email } = this.props
-        // console.log(this.props.cartItems)
-        // this.props.cartItems.quantity = 1
+
         let mappedParts = this.props.cartItems.map((part, index) => {
                 return (
 

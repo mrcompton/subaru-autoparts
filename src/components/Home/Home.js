@@ -8,10 +8,11 @@ class Home extends Component {
         super(props)
 
         this.state = {
-            modalShow: false
+            modalShow: false,
+            reset: false
         }
     }
-
+  
     handleGetYears = () => {
 
     }
@@ -93,10 +94,10 @@ class Home extends Component {
                     </div> */}
                     
                  
-
+{/* 
                     <div className='cool-pic'>
                         <img className='bottom-pic' src='https://www.marketing91.com/wp-content/uploads/2018/04/Subaru-Competitors.jpg' alt='' />
-                    </div>
+                    </div> */}
                    
                 </div>
 
