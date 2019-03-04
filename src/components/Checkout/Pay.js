@@ -23,6 +23,7 @@ class Pay extends Component {
 
  
   render() {
+    let emptyArr = []
     return (
 
       <div>
@@ -41,7 +42,7 @@ class Pay extends Component {
         />
         <div>
 
-          <Link to='/'><button id="clickMe" onClick={() => this.props.emptyCart([])}></button></Link>
+          <Link to='/'><button id="clickMe" onClick={() => this.props.emptyCart(emptyArr)}></button></Link>
         </div>
       </div>
 

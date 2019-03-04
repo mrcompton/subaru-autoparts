@@ -81,7 +81,9 @@ input{
   }
 }
 
-@media(max-width:400px){
+
+
+@media(max-width:420px){
  .header1{
    margin-top: 100px;
  }

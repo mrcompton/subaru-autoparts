@@ -10,12 +10,12 @@ class Cart extends Component {
         super(props)
 
         this.state = {
-            reset: ''
+            reset: false
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
-            reset: 'yes'
+            reset: !this.state.reset
         })
     }
 
@@ -27,15 +27,18 @@ class Cart extends Component {
     }
     render() {
         const { email } = this.props
-
-        let mappedParts = this.props.cartItems.map((part, index) => {
-                return (
-
-                    <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
+        let mappedParts
 
 
-                )
-            })
+        mappedParts = this.props.cartItems.map((part, index) => {
+            return (
+                <CartItem key={part.id} part={part} index={index} handleDeleteItem={this.handleDeleteItem} />
+            )
+        })
+
+
+
+
 
         return (
             <div className='cart-parent'>
@@ -48,26 +51,28 @@ class Cart extends Component {
                 }
                 <div >
 
-                    {this.props.cartItems[0]
-                        ? <div className='cart-items'>
-                            <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
-                            <table className='test-table'>
-                                <tbody>
-                                    <tr>
-                                        <th className='producto'>Product</th>
-                                        <th className='big-only'>Part Number</th>
-                                        <th className='big-only'>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th></th>
-                                    </tr>
-                                    {mappedParts}
-                                </tbody>
-                            </table>
+                    {
+                        this.props.cartItems[0]
 
-                        </div>
-                        : <div>Your cart is empty</div>
-                        
+                            ? <div className='cart-items'>
+                                <Link to='/checkout'><button className='btn-checkout'>Purchase Items</button></Link>
+                                <table className='test-table'>
+                                    <tbody>
+                                        <tr>
+                                            <th className='producto'>Product</th>
+                                            <th className='big-only'>Part Number</th>
+                                            <th className='big-only'>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                            <th></th>
+                                        </tr>
+                                        {mappedParts}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            : <div>Your cart is empty</div>
+
                     }
 
                 </div>
