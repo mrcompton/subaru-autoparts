@@ -23,7 +23,7 @@ class Parts extends Component {
             reset: ''
         }
     }
-
+ 
     componentDidMount() {
         this.setState({
             reset: 'yes'

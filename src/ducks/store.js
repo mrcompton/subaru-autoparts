@@ -7,7 +7,7 @@ const persistConfig = {
     key: 'root',
     storage,
   }
-const persistedReducer = persistReducer(persistConfig, reducer)
+const persistedReducer = persistReducer(persistConfig, reducer) 
 
 export default () => {
   let store = createStore(persistedReducer)

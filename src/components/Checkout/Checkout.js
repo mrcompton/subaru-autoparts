@@ -23,7 +23,8 @@ class Checkout extends Component {
             zip: 0,
             grandTotal: 0,
             completed: '',
-            orderNum: 0
+            orderNum: 0,
+            formError: ''
         }
     }
 
@@ -137,13 +138,12 @@ class Checkout extends Component {
 
                             <Form.Group as={Col} controlId="formGridZip">
                                 <Form.Label>Zip</Form.Label>
+                                
                                 <Form.Control onChange={(e)=>this.handleChange('zip',e.target.value)} value={this.state.zip}/>
                             </Form.Group>
                         </Form.Row>
 
-                        {/* <Form.Group id="formGridCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
-                        </Form.Group> */}
+                        {this.state.formError}
                         {
                             !this.state.completed
                             ?<button className='btn-purchase' label='Submit' onClick={()=>this.handlePostOrder(grandTotal)}>
