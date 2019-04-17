@@ -43,6 +43,7 @@ class Cart extends Component {
         return (
             <div className='cart-parent'>
                 <h1>My Cart</h1>
+                <p>*This is a demo site.  No items will be actually be purchased*</p>
                 {email
                     ?
                     <h4>Account: {email}</h4>

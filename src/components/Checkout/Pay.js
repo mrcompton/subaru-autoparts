@@ -15,7 +15,7 @@ class Pay extends Component {
     console.log('token', token);
     axios.post(`/api/payment`, { token, amount: this.props.grandTotal }).then(response => {
       console.log({ response })
-      alert('Transaction Complete.  Your parts will be shipped tommorow.')
+      alert('This is a demo site.  No items were actually purchased.')
       document.getElementById("clickMe").click()
 
     });
