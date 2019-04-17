@@ -74,6 +74,7 @@ class Parts extends Component {
         })
         return (
             <div className='part-container'>
+                <p>*This is a demo site.  No parts will actually be purchased*</p>
                 {this.props.email === 'admin@admin.com'
                     ?
                     <div>

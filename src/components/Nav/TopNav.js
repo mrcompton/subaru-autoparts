@@ -27,7 +27,7 @@ class TopNav extends Component {
                             <div>
 
                             </div>
-                            <Link to='/' ><img className="store-logo" src="https://wmmr.com/wp-content/uploads/sites/15/2015/10/Subaru-Logo-Stacked-copy.png" alt="Logo"></img></Link>
+                            <Link to='/' ><img className="store-logo" src="https://cdn.iconscout.com/icon/free/png-256/subaru-5-555175.png" alt="Logo"></img></Link>
                             <Link to='/' ><div className='logo-title'>Auto Parts Demo Site</div></Link>
 
 
