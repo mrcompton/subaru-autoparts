@@ -12,8 +12,8 @@ class About extends Component {
             <div className='about'>
                 <div className='about-items'>
                     <h2>In vehicula quam. Quis est cursus varius.</h2>
-                    <img className='about-imgs' src='https://www.simeonemuseum.org/wp-content/uploads/events/simeone-museum-subaru-justy-bonneville-05.jpg' alt='race'/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, est eu semper faucibus, velit odio dictum libero, ut luctus sapien velit sit amet libero.</p>
+                    {/* <img className='about-imgs' src='https://www.simeonemuseum.org/wp-content/uploads/events/simeone-museum-subaru-justy-bonneville-05.jpg' alt='race'/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, est eu semper faucibus, velit odio dictum libero, ut luctus sapien velit sit amet libero.</p> */}
                     <img className='about-imgs' src='https://3d-car-shows.com/wp-content/uploads/2014/06/Subaru_Racing_Drivers.jpg' alt=''/>
                     <p>Vivamus ac placerat ligula. Duis dictum erat vitae interdum rutrum. Nam quis lobortis ipsum. Vestibulum dictum felis magna, non accumsan massa bibendum a. Pellentesque tristique ante nec magna malesuada tincidunt. Nullam efficitur felis lacus, nec dapibus erat convallis eu. Vivamus gravida cursus maximus.</p>
                     <img className='about-img-wide' src='https://secure-akns.subaru.com/content/media/mp_video_768/WhySubaruService_PF.jpg' alt=''/>

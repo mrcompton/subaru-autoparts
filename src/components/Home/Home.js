@@ -79,12 +79,12 @@ class Home extends Component {
                         </div>
                     </div>
 
-                    <div role='button' onClick={() => this.setState({ modalShow: true })}>
+                    {/* <div role='button' onClick={() => this.setState({ modalShow: true })}>
                         <img className='products' src='https://cdn.shopify.com/s/files/1/0890/6136/products/NGK1637_a_1_grande_14d4209b-9071-44fc-be36-05088582c7bf_413x@3x.progressive.jpg' alt='' />
                         <div>
                             <p>Spark Plugs</p>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* <div role='button' onClick={() => this.setState({ modalShow: true })}>
                         <img className='products' src='https://www.ogracing.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/o/rotor-dimpled-web_7.jpg' alt='' />
